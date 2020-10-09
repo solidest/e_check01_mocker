@@ -1,0 +1,15 @@
+#电池内阻模拟器配置
+
+- name: cal_nobus_ad
+  # 设备类型
+  device_type: 1
+  # 设备编号
+  device_code: 1
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #仪表校验板卡
+  # 结果判定使用的命令类型
+  t_cmd: 0x31 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_caiji

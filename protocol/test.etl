@@ -1,0 +1,25 @@
+
+protocol prot1 {
+    segment bfdyz { parser: 'uint16', }
+    segment bgdyz { parser: 'uint16', }
+}
+
+bitrl protocol prot_rl {
+    segment seg_0 { parser: 'uint2' }
+    segment seg_1 { parser: 'uint3' }
+    segment seg_2 { parser: 'uint2' }
+    segment seg_3 { parser: 'uint2' }
+    segment seg_4 { parser: 'uint2' }
+    segment seg_5 { parser: 'uint5' }
+}
+
+bitlr protocol prot_lr {
+    segment seg_0 { parser: 'uint2' }
+    segment seg_1 { parser: 'uint3' }
+    segment seg_2 { parser: 'uint2' }
+    segment seg_3 { parser: 'uint2' }
+    segment seg_4 { parser: 'uint2' }
+    segment seg_5 { parser: 'uint5' }
+}
+
+

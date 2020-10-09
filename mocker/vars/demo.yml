@@ -1,0 +1,19 @@
+
+- name: demo-reply
+  # 设备类型
+  device_type: 100
+  # 设备编号
+  device_code: 100
+  # 测试编号
+  test_code: 100
+  # 结果判定使用的板卡编号
+  t_card: 0x04 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x32 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_time
+  t_recvtime:
+    t00: 
+      time: 100
+    t01: 
+      time: 5100

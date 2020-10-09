@@ -1,0 +1,9 @@
+bitrl protocol RECV_MAIN {
+    segment HEAD  {parser: 'string', autovalue: "TSPD00", length: 6}
+    segment LEN {parser: 'uint16>', autovalue: ByteSize(this)}
+    segment DA {parser: 'uint8', autovalue: 0}
+    segment SA {parser: 'uint8', autovalue: 0}
+    segment CMD {parser: 'uint8', autovalue: 0}
+    segment BUFFER {parser: 'string', length: this.LEN - 12}
+    segment CHECK {parser: 'uint8', autovalue: CheckCode(XOR_8, this.LEN)}
+}

@@ -1,0 +1,12 @@
+bitrl protocol recv_hand {
+    segment da {parser: 'uint8', autovalue: 0}
+    segment do {parser: 'uint8', autovalue: 0}
+    segment ad {parser: 'uint8', autovalue: 0}
+    segment di {parser: 'uint8', autovalue: 0}
+    segment can {parser: 'uint8', autovalue: 0}
+    segment b1553 {parser: 'uint8', autovalue: 0}
+    segment mic {parser: 'uint8', autovalue: 0}
+    segment flexray {parser: 'uint8', autovalue: 0}
+    segment usart {parser: 'uint8', autovalue: 0}
+    segment result {parser: 'uint8', autovalue: 0}
+}

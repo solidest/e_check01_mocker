@@ -1,0 +1,7 @@
+bitrl protocol send_check_da {
+    segment path {parser: 'uint8', autovalue: 0}
+    segment data {parser: 'uint8', autovalue: 0}
+    segment type {parser: 'uint8', autovalue: 0}
+    segment bit_max {parser: 'uint8', autovalue: 0}
+    segment bit_min {parser: 'uint8', autovalue: 0}
+}

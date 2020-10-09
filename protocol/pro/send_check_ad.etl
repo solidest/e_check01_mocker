@@ -1,0 +1,4 @@
+bitrl protocol send_check_ad {
+    segment path {parser: 'uint8', autovalue: 0}
+    segment data {parser: 'uint8', autovalue: 0}
+}

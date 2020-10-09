@@ -1,0 +1,562 @@
+#iu模拟器配置
+- name: 2-1-1
+  # 设备类型
+  device_type: 2
+  # 设备编号
+  device_code: 1
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  # t_data:
+  #   boxing_U: 0x02
+  #   boxing_I: 0x04
+- name: 2-2-1
+  # 设备类型
+  device_type: 2
+  # 设备编号
+  device_code: 2
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 2-3-1
+  # 设备类型
+  device_type: 2
+  # 设备编号
+  device_code: 3
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 2-4-1
+  # 设备类型
+  device_type: 2
+  # 设备编号
+  device_code: 4
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 2-5-1
+  # 设备类型
+  device_type: 2
+  # 设备编号
+  device_code: 5
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 2-6-1
+  # 设备类型
+  device_type: 2
+  # 设备编号
+  device_code: 6
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 2-7-1
+  # 设备类型
+  device_type: 2
+  # 设备编号
+  device_code: 7
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 2-8-1
+  # 设备类型
+  device_type: 2
+  # 设备编号
+  device_code: 8
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 2-9-1
+  # 设备类型
+  device_type: 2
+  # 设备编号
+  device_code: 9
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 2-10-1
+  # 设备类型
+  device_type: 2
+  # 设备编号
+  device_code: 10
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 2-11-1
+  # 设备类型
+  device_type: 2
+  # 设备编号
+  device_code: 11
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-2-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 2
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-3-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 3
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-5-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 5
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-6-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 6
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-8-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 8
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-9-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 9
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-11-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 11
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-12-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 12
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-14-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 14
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-15-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 15
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-17-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 17
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-18-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 18
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-20-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 20
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-21-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 21
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-23-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 23
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-24-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 24
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-26-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 26
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-27-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 27
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-29-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 29
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x01
+    boxing_I: 0x04
+- name: 3-30-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 30
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-32-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 32
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04
+- name: 3-33-1
+  # 设备类型
+  device_type: 3
+  # 设备编号
+  device_code: 33
+  # 测试编号
+  test_code: 1
+  # 结果判定使用的板卡编号
+  t_card: 0x02 #防护板卡2
+  # 结果判定使用的命令类型
+  t_cmd: 0x33 #状态上报
+  # 结果判定使用的协议
+  t_prot: recv_nobus
+  # 结果判定使用的数据真值
+  t_data:
+    boxing_U: 0x02
+    boxing_I: 0x04

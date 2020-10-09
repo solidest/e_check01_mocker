@@ -1,0 +1,10 @@
+bitrl protocol recv_nobus {
+    segment _CMD {parser: 'uint16>', autovalue: 0}
+    segment boxing {parser: 'uint8', autovalue: 0} //0x01交流电压,电流  0x02直流电压（60V）,电流  0x03直流电压（300V）,电流
+    segment number {parser: 'uint64>', autovalue: 0}
+    segments data_text [200] {
+         //采样序号
+        segment data_u {parser: 'int16>', autovalue: 0} //采样电压数据精确到0.01V
+        segment data_i {parser: 'int16>', autovalue: 0} //采样电流数据精确到0.1A
+    }
+}

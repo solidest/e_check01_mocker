@@ -1,0 +1,142 @@
+
+
+//仿真设备1
+device board1 {
+
+    udp conn { ip: '127.0.0.1', port: 4000}
+    // udp conn { ip: '127.0.0.1', port: 8001}
+}
+
+
+//仿真设备2
+device board2 {
+
+    udp conn { ip: '127.0.0.1', port: 8002}
+}
+
+//仿真设备3
+device board3 {
+
+    udp conn { ip: '127.0.0.1', port: 8003}
+}
+
+
+
+//主控设备
+device main_ctr {
+    // udp conn {ip: '192.168.42.130', port:4000, before_recv: 'Before_recv'}
+    udp conn {ip: '127.0.0.1', port:4001, before_recv: 'Before_recv'}
+
+}
+
+
+
+
+//拓扑结构板卡1发送到主控
+topology topo_board1_main {
+
+    linking: {
+        // total: [dev112.s1, dev11.c1, dev12.s2],   //总线
+        link1: [ main_ctr.conn,board1.conn], //点到点连接,etest与仿真接口dev111
+    }
+    //设备映射
+    mapping: {
+        uut: [main_ctr],   //被测硬件单元
+        etest: [board1], //软设备
+    }
+
+
+   //接口绑定
+    binding: {
+        board1.conn: 'auto',
+    }
+
+}
+
+
+//拓扑结构板卡二发送到主控
+topology topo_board2_main {
+
+    linking: {
+        // total: [dev112.s1, dev11.c1, dev12.s2],   //总线
+        link1: [ main_ctr.conn,board2.conn], //点到点连接,etest与仿真接口dev111
+    }
+    //设备映射
+    mapping: {
+        uut: [main_ctr],   //被测硬件单元
+        etest: [board2], //软设备
+    }
+
+
+   //接口绑定
+    binding: {
+        board2.conn: 'auto',
+    }
+
+}
+
+
+
+//拓扑结构板卡3发送到主控
+topology topo_board3_main {
+
+    linking: {
+        // total: [dev112.s1, dev11.c1, dev12.s2],   //总线
+        link1: [ main_ctr.conn,board3.conn], //点到点连接,etest与仿真接口dev111
+    }
+    //设备映射
+    mapping: {
+        uut: [main_ctr],   //被测硬件单元
+        etest: [board3], //软设备
+    }
+
+
+   //接口绑定
+    binding: {
+        board3.conn: 'auto',
+    }
+
+}
+
+topology topo_main_board1_copy {
+    mapping: {
+        uut: [board1,],
+        etest: [ main_ctr,],
+    }
+    linking: {
+        link_0: [ board1.conn, main_ctr.conn],
+    }
+    binding: {
+        main_ctr.conn: 'auto',
+    }
+}
+
+
+
+
+
+
+
+
+//拓扑结构主控发送到板卡1
+topology topo_main_board1 {
+
+    linking: {
+        // total: [dev112.s1, dev11.c1, dev12.s2],   //总线
+        link1: [ main_ctr.conn,board1.conn], //点到点连接,etest与仿真接口dev111
+    }
+    //设备映射
+    mapping: {
+        uut: [board1],   //被测硬件单元
+        etest: [main_ctr], //软设备
+    }
+
+
+   //接口绑定
+    binding: {
+        main_ctr.conn: 'auto',
+    }
+
+}
+
+

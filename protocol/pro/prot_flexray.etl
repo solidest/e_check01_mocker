@@ -1,0 +1,13 @@
+bitrl protocol prot_flexray {
+    segment type {parser: 'uint8', autovalue: 0x02}
+    segment path {parser: 'uint8', autovalue: 0}
+    segment baud_rate {parser: 'uint8', autovalue: 0x01}
+    segment __empty_frame {parser: 'uint3', autovalue: 0}
+    segment empty_frame {parser: 'uint1', autovalue: 0}
+    segment same_frame {parser: 'uint1', autovalue: 0}
+    segment start_frame {parser: 'uint1', autovalue: 0}
+    segment id {parser: 'uint10', autovalue: 0}
+    segment long {parser: 'uint8', autovalue: ByteSize(this.data)}
+    segment count {parser: 'uint8', autovalue: 0}
+    segment data {parser: 'string', length: this.long}
+}

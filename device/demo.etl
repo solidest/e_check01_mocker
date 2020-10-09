@@ -1,0 +1,39 @@
+
+
+//tcp客户端
+device client {
+    tcp_client tcp1 { ip: '127.0.0.1', keepalive: true, delayconnect: true}
+    tcp_client tcp2 { ip: '127.0.0.1', port: 8888}
+    tcp_client tcp3 { ip: '127.0.0.1'}
+}
+
+//tcp服务器
+device server {
+    tcp_server srva { ip: '127.0.0.1', port: 8080}
+    tcp_server srvb { ip: '127.0.0.1', port: 8088}
+    tcp_server srvc { ip: '127.0.0.1', port: 8088}
+}
+
+topology topo_main {
+
+    linking: {
+        link1: [client.tcp1, server.srva],
+        link2: [ client.tcp2, client.tcp3, server.srvb, server.srvc],
+    }
+
+    //设备映射
+    mapping: {
+        etest: [client, server], //软设备
+    }
+
+   //接口绑定
+    binding: {
+        client.tcp1: 'auto',
+        client.tcp2: 'auto',
+        client.tcp3: 'auto',
+        server.srva: 'auto',
+        server.srvb: 'auto',
+        server.srvc: 'auto'
+    }
+
+}
