@@ -1,0 +1,370 @@
+0708 17:19:39] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x436672 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/e_check01/bin/etestd
+
+0709 08:52:44] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x436672 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/e_check01/bin/etestd
+
+0709 08:53:27] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x436672 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/e_check01/bin/etestd
+
+0709 08:53:50] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x436672 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/e_check01/bin/etestd
+
+0709 08:56:34] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x436672 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/e_check01/bin/etestd
+
+0709 10:16:49] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/e_check01/bin/etestd
+#4  0x56026b446955 in ?? at /home/believe/e_check01/bin/etestd
+#5  0x56026b471fa3 in ?? at /home/believe/e_check01/bin/etestd
+#6  0x2409b in __libc_start_main at /home/believe/e_check01/bin/etestd
+#7  0x56026b443b5a in ?? at /home/believe/e_check01/bin/etestd
+
+0709 10:17:15] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/e_check01/bin/etestd
+#4  0x55f6bc023955 in ?? at /home/believe/e_check01/bin/etestd
+#5  0x55f6bc04efa3 in ?? at /home/believe/e_check01/bin/etestd
+#6  0x2409b in __libc_start_main at /home/believe/e_check01/bin/etestd
+#7  0x55f6bc020b5a in ?? at /home/believe/e_check01/bin/etestd
+
+0731 19:02:30] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/新建文件夹/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/新建文件夹/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/新建文件夹/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/新建文件夹/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/新建文件夹/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/新建文件夹/e_check01/bin/etestd
+
+0731 19:05:16] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/新建文件夹/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/新建文件夹/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/新建文件夹/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/新建文件夹/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/新建文件夹/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/新建文件夹/e_check01/bin/etestd
+
+0731 19:06:05] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/新建文件夹/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/新建文件夹/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/新建文件夹/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/新建文件夹/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/新建文件夹/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/新建文件夹/e_check01/bin/etestd
+
+0731 19:07:11] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/新建文件夹/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/新建文件夹/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/新建文件夹/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/新建文件夹/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/新建文件夹/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/新建文件夹/e_check01/bin/etestd
+
+0801 16:41:46] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+0824 13:15:17] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+0824 13:17:21] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+0824 13:27:19] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+0824 14:36:53] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+0824 14:37:53] 0824 14:37:54] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+0824 14:42:08] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+0824 14:59:39] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+0824 15:11:30] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+0824 15:12:18] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+0824 15:44:28] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+0824 15:44:44] 0824 15:44:44] 0824 15:44:44] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+0824 15:44:44] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+0824 15:45:06] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+0824 17:16:56] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+0824 17:17:36] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40b2e6 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x4367e6 in main at /home/solidest/Desktop/etest_daemon/main.cpp:32
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x40866a in _start at /home/believe/etest/e_check01/bin/etestd
+
+0825 13:24:33] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40d7d0 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x446c85 in main at /home/solidest/Desktop/etest_daemon/main.cpp:63
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x4097fa in _start at /home/believe/etest/e_check01/bin/etestd
+
+0825 13:27:05] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40d7d0 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x446c85 in main at /home/solidest/Desktop/etest_daemon/main.cpp:63
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x4097fa in _start at /home/believe/etest/e_check01/bin/etestd
+
+0825 15:49:33] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestd
+#4  0x40d7d0 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x446c85 in main at /home/solidest/Desktop/etest_daemon/main.cpp:63
+#6  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestd
+#7  0x4097fa in _start at /home/believe/etest/e_check01/bin/etestd
+
+0908 14:35:26] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/e_check01/bin/etestd
+#4  0x40d7d0 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x446c85 in main at /home/solidest/Desktop/etest_daemon/main.cpp:63
+#6  0x2409b in __libc_start_main at /home/believe/e_check01/bin/etestd
+#7  0x4097fa in _start at /home/believe/e_check01/bin/etestd
+
+0908 14:35:50] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/e_check01/bin/etestd
+#4  0x40d7d0 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x446c85 in main at /home/solidest/Desktop/etest_daemon/main.cpp:63
+#6  0x2409b in __libc_start_main at /home/believe/e_check01/bin/etestd
+#7  0x4097fa in _start at /home/believe/e_check01/bin/etestd
+
+0917 13:21:28] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/e_check01/bin/etestd
+#1  0x22535 in abort at /home/believe/e_check01/bin/etestd
+#2  0x2240f in ?? at /home/believe/e_check01/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/e_check01/bin/etestd
+#4  0x40d7d0 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x446c85 in main at /home/solidest/Desktop/etest_daemon/main.cpp:63
+#6  0x2409b in __libc_start_main at /home/believe/e_check01/bin/etestd
+#7  0x4097fa in _start at /home/believe/e_check01/bin/etestd
+
+1014 15:09:48] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/e_check01_mocker/bin/etestd
+#1  0x22535 in abort at /home/believe/e_check01_mocker/bin/etestd
+#2  0x2240f in ?? at /home/believe/e_check01_mocker/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/e_check01_mocker/bin/etestd
+#4  0x40d7d0 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x446c85 in main at /home/solidest/Desktop/etest_daemon/main.cpp:63
+#6  0x2409b in __libc_start_main at /home/believe/e_check01_mocker/bin/etestd
+#7  0x4097fa in _start at /home/believe/e_check01_mocker/bin/etestd
+

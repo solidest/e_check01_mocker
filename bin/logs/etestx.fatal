@@ -1,0 +1,77 @@
+0807 10:35:24] SIGSEGV: segmentation fault
+#0  0x4e7910 in lua_pushinteger at /home/believe/etest/e_check01/bin/etestx
+#1  0x4385aa in setvalue(nlohmann::basic_json<std::map, std::vector, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, long, unsigned long, double, std::allocator, nlohmann::adl_serializer>&, lua_State*) at /home/solidest/Desktop/etest_runner/src/utility/lua_json.cpp:369
+#2  0x460c29 in etl_reply(nlohmann::basic_json<std::map, std::vector, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, long, unsigned long, double, std::allocator, nlohmann::adl_serializer>&) at /home/solidest/Desktop/etest_runner/src/api/ask.cc:32
+#3  0x499bc7 in _on_command(uv_async_s*) at /home/solidest/Desktop/etest_runner/src/runner.cc:332
+#4  0x4cbad2 in uv__async_io at async.c:?
+#5  0x4dc3bf in uv__io_poll at /home/believe/etest/e_check01/bin/etestx
+#6  0x4cc451 in uv_run at /home/believe/etest/e_check01/bin/etestx
+#7  0x498f0b in run(void*) at /home/solidest/Desktop/etest_runner/src/runner.cc:121
+#8  0x49bff7 in xx::Function1::run() at /home/solidest/Desktop/etest_runner/include/base/unix/../closure.h:47
+#9  0x49c1f9 in Thread::_Run(void*) at /home/solidest/Desktop/etest_runner/include/base/unix/thread.h:167
+#10  0x7fa3   in start_thread at /home/believe/etest/e_check01/bin/etestx
+#11  0xf94cf  in clone at /home/believe/etest/e_check01/bin/etestx
+
+0829 14:22:390901 14:44:47] SIGSEGV: segmentation fault
+#0  0x4f28d4 in lua_newthread at /home/believe/etest/e_check01/bin/etestx
+#1  0x4995bc in newLuaThread() at /home/solidest/Desktop/etest_runner/src/runner.cc:50
+#2  0x464f46 in _on_recved(void*) at /home/solidest/Desktop/etest_runner/src/api/dev.cc:813
+#3  0x4471ad in InterfaceStream::_on_idle(uv_idle_s*) at /home/solidest/Desktop/etest_runner/src/device/InterfaceStream.cpp:190
+#4  0x4cfa91 in uv__run_idle at /home/believe/etest/e_check01/bin/etestx
+#5  0x4cce1c in uv_run at /home/believe/etest/e_check01/bin/etestx
+#6  0x49991d in run(void*) at /home/solidest/Desktop/etest_runner/src/runner.cc:121
+#7  0x49ca09 in xx::Function1::run() at /home/solidest/Desktop/etest_runner/include/base/unix/../closure.h:47
+#8  0x49cc0b in Thread::_Run(void*) at /home/solidest/Desktop/etest_runner/include/base/unix/thread.h:167
+#9  0x7fa3   in start_thread at /home/believe/etest/e_check01/bin/etestx
+#10  0xf94cf  in clone at /home/believe/etest/e_check01/bin/etestx
+
+0901 14:53:33] SIGSEGV: segmentation fault
+#0  0x4f28d4 in lua_newthread at /home/believe/etest/e_check01/bin/etestx
+#1  0x4995bc in newLuaThread() at /home/solidest/Desktop/etest_runner/src/runner.cc:50
+#2  0x464f46 in _on_recved(void*) at /home/solidest/Desktop/etest_runner/src/api/dev.cc:813
+#3  0x4471ad in InterfaceStream::_on_idle(uv_idle_s*) at /home/solidest/Desktop/etest_runner/src/device/InterfaceStream.cpp:190
+#4  0x4cfa91 in uv__run_idle at /home/believe/etest/e_check01/bin/etestx
+#5  0x4cce1c in uv_run at /home/believe/etest/e_check01/bin/etestx
+#6  0x49991d in run(void*) at /home/solidest/Desktop/etest_runner/src/runner.cc:121
+#7  0x49ca09 in xx::Function1::run() at /home/solidest/Desktop/etest_runner/include/base/unix/../closure.h:47
+#8  0x49cc0b in Thread::_Run(void*) at /home/solidest/Desktop/etest_runner/include/base/unix/thread.h:167
+#9  0x7fa3   in start_thread at /home/believe/etest/e_check01/bin/etestx
+#10  0xf94cf  in clone at /home/believe/etest/e_check01/bin/etestx
+
+0902 14:31:22] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestx
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestx
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestx
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestx
+#4  0x471f09 in Ticker::~Ticker() at /home/solidest/Desktop/etest_runner/src/ticker.cpp:19
+#5  0x49c43e in _release_runinfo(RunInfo*) at /home/solidest/Desktop/etest_runner/main.cpp:61 (discriminator 1)
+#6  0x49c6bf in main at /home/solidest/Desktop/etest_runner/main.cpp:114
+#7  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestx
+#8  0x40ac6a in _start at /home/believe/etest/e_check01/bin/etestx
+
+0902 14:47:43] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/etest/e_check01/bin/etestx
+#1  0x22535 in abort at /home/believe/etest/e_check01/bin/etestx
+#2  0x2240f in ?? at /home/believe/etest/e_check01/bin/etestx
+#3  0x30102 in __assert_fail at /home/believe/etest/e_check01/bin/etestx
+#4  0x471f09 in Ticker::~Ticker() at /home/solidest/Desktop/etest_runner/src/ticker.cpp:19
+#5  0x49c43e in _release_runinfo(RunInfo*) at /home/solidest/Desktop/etest_runner/main.cpp:61 (discriminator 1)
+#6  0x49c6bf in main at /home/solidest/Desktop/etest_runner/main.cpp:114
+#7  0x2409b in __libc_start_main at /home/believe/etest/e_check01/bin/etestx
+#8  0x40ac6a in _start at /home/believe/etest/e_check01/bin/etestx
+
+0902 14:55:44] SIGSEGV: segmentation fault
+#0  0x4f2c4f in internshrstr at lstring.c:?
+#1  0x4e839d in lua_pushlstring at /home/believe/etest/e_check01/bin/etestx
+#2  0x4385f7 in setvalue(nlohmann::basic_json<std::map, std::vector, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, long, unsigned long, double, std::allocator, nlohmann::adl_serializer>&, lua_State*) at /home/solidest/Desktop/etest_runner/src/utility/lua_json.cpp:373
+#3  0x461389 in etl_reply(nlohmann::basic_json<std::map, std::vector, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, long, unsigned long, double, std::allocator, nlohmann::adl_serializer>&) at /home/solidest/Desktop/etest_runner/src/api/ask.cc:32
+#4  0x49a5d9 in _on_command(uv_async_s*) at /home/solidest/Desktop/etest_runner/src/runner.cc:332
+#5  0x4cc4e2 in uv__async_io at async.c:?
+#6  0x4dcdcf in uv__io_poll at /home/believe/etest/e_check01/bin/etestx
+#7  0x4cce61 in uv_run at /home/believe/etest/e_check01/bin/etestx
+#8  0x49991d in run(void*) at /home/solidest/Desktop/etest_runner/src/runner.cc:121
+#9  0x49ca09 in xx::Function1::run() at /home/solidest/Desktop/etest_runner/include/base/unix/../closure.h:47
+#10  0x49cc0b in Thread::_Run(void*) at /home/solidest/Desktop/etest_runner/include/base/unix/thread.h:167
+#11  0x7fa3   in start_thread at /home/believe/etest/e_check01/bin/etestx
+#12  0xf94cf  in clone at /home/believe/etest/e_check01/bin/etestx
+

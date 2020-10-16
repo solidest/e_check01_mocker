@@ -350,6 +350,7 @@ function Do_test(msg, sub_prot)
     end
 
     print(CARDS_NAME[msg.DA] .. "收到：测试开始指令(" .. msg.LEN .. ")")
+    delay(4000)
     Test_res(sub_msg.test_code)
 end
 
