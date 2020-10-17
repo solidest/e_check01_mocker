@@ -440,7 +440,7 @@ function Create_data_iu()
         if I < 0 then
             I = 0
         end
-        U = (U or math.random(1, 1000)) + (math.random(1,100)-d*10) * (Sca2 or 1)
+        U = (U or math.random(1, 200)) + (math.random(1, 60)-d) * (Sca2 or 1)
         table.insert(rcds, {I = I, U = U})
     end
 
@@ -450,9 +450,9 @@ function Create_data_iu()
         Sca1 = 1
     end
 
-    if U > 5000 then
+    if U > 600 then
         Sca2 = -1
-    elseif U < -400 then
+    elseif U < -20 then
         Sca2 = 1
     end
 
@@ -473,7 +473,7 @@ function Do_test_iur(msg, prot)
         if sub_msg.dianzu_check == 0x01 or sub_msg.dianzu_check == 0x02 then
             return Do_result_r(sub_msg, msg.DA)
         else
-            Timer_id = async.interval(200, 200, Do_result_iu, sub_msg, msg.DA)            
+            Timer_id = async.interval(400, 400, Do_result_iu, sub_msg, msg.DA)            
         end
     elseif sub_msg.test_state == 0x02 then
         print(CARDS_NAME[msg.DA] .. "收到：测试结束指令(" .. msg.LEN .. ")")
