@@ -1,0 +1,8 @@
+protocol prot_message {
+    segment seg_message { parser: 'uint8', autovalue: 0 }
+    segments seg_messages {
+        segment msg_string { parser: 'string', endwith: '~', autovalue: "123"}
+        segment msg[2] { parser: 'string', length: 3, autovalue: ["123", "000"] }
+        segment uint { parser: 'int64', autovalue: 0}
+    }
+}

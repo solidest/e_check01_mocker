@@ -1,0 +1,20 @@
+  protocol prot30 {
+        segment seg_1  { parser: 'int8', autovalue: 0x55AA}
+        segment seg_2  { parser: 'string' }
+        segment seg_3  { parser: 'int16',autovalue:1 }
+        segment seg_4  { parser: 'int32', autovalue: ByteSize(this.seg_3) }
+
+  }
+
+
+
+  protocol prot31 {
+        segment seg_1  { parser: 'int8', autovalue: 0x55AA}
+        segment seg_2  { parser: 'int64'}
+        segment seg_3  { parser: 'float' }
+        segment seg_4  { parser: 'int32', autovalue: ByteSize(this.seg_3) }
+        segment seg_5  { parser: 'int16',autovalue:ByteSize(this.seg_4)}
+        segment seg_6  { parser:"uint64",autovalue:ByteSize(this.seg_2)}
+  }
+
+

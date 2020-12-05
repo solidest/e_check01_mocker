@@ -1,0 +1,38 @@
+  protocol prot16 {
+        segment seg_1 { parser: 'uint8',autovalue: 0 }
+
+        segment seg_2 { parser: 'string', length: 4 }
+        segment seg_3 { parser: 'string', endwith: '$' }
+        segment seg_4 { parser: 'string' }
+        segment seg_5 { parser: 'string', length: 3 }
+
+
+
+
+  }
+
+    protocol prot17 {
+
+        segment seg_1 { parser: 'string', length: 2+2 }
+        segment seg_2 { parser: 'string', length: 6-2}
+        segment seg_3 { parser: 'string', length: 2*2 }
+        segment seg_4 { parser: 'string', length: 8/2}
+  
+
+  }
+
+protocol prot18 {
+
+        segment seg_1 { parser: 'string'}
+
+  }
+
+protocol string_ {
+      segments test { 
+            segment int {parser: 'int32', autovalue: 2 - 1}
+            segment str { parser: 'string', endwith: '#'}
+            segment str1 { parser: 'string', endwith : '\0',autovalue: "12"}
+
+      }
+      segment te { parser: 'string', length:2, autovalue:"23"}
+}

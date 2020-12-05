@@ -1,0 +1,36 @@
+
+device udp1 {
+    udp conn1 { ip: '0.0.0.0', port: 3000, ttl: 20, reuseaddr: true }
+    udp conn2 { ip: '0.0.0.0', port: 4000 }
+    udp conn3 { }
+}
+
+device udp2 {
+    udp conn1 { ip: '0.0.0.0', port: 5000, ttl: 20}
+    udp conn2 { ip: '0.0.0.0', port: 6000 }
+    udp conn3 { ip: '0.0.0.0', port: 7000 }
+    udp conn4 { ip: '0.0.0.0', port: 8000 }
+}
+
+topology topo_udp {
+
+    linking: {
+        link1: [ udp1.conn1, udp2.conn1 ],
+        link2: [ udp1.conn2, udp2.conn2, udp2.conn3 ],
+        link3: [ udp1.conn3, udp2.conn4 ]
+    }
+
+    mapping: {
+        etest: [ udp1, udp2 ],
+    }
+
+    binding: {
+        udp1.conn1: 'auto',
+        udp1.conn2: 'auto',
+        udp1.conn3: 'auto',
+        udp2.conn1: 'auto',
+        udp2.conn2: 'auto',
+        udp2.conn3: 'auto',
+        udp2.conn4: 'auto',
+    }
+}
