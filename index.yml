@@ -3,7 +3,7 @@
 project:
   id: 18cde1dd-1907-4459-45aa-7fc89480065c  # 项目唯一id
   path: . # 项目文件根目录，绝对路径或相对路径
-  etestd_ip: 192.168.43.93  # etest守护服务的ip地址或主机名
+  etestd_ip: 192.168.1.9 # etest守护服务的ip地址或主机名
   etestd_port: 1211 # etest守护服务的端口号
 
 # 执行程序设置
