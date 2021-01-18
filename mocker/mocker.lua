@@ -179,7 +179,7 @@ function Test_res(test_code)
             -- delay(100)
             -- local res3 = message(protocol[t.t_prot], {x2_79=1,x2_81=1,x2_83=1})
             -- local msg3 = CreatSendMain(t.t_cmd, t.t_card, pack(res3))
-            send(device.board1.conn, msg3)
+            -- send(device.board1.conn, msg3)
             if Step == "test_ok" then
                 log.info("测试成功数据已发送")
             else
@@ -399,6 +399,7 @@ function Do_result_r(sub_msg,da)
         local sub = message(protocol.recv_caiji)
         sub.state = 0x02
         sub.dianchineizu = math.random(1, 100)
+        sub.dianchi_v = math.random(1, 100)
         async.send(device.board1.conn,CreatSendMain(0x31, da, pack(sub)))
         print("已发送电池内阻采集数据！")
     end

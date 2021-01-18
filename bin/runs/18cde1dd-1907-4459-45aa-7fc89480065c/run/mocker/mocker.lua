@@ -165,21 +165,21 @@ function Test_res(test_code)
             -- 延时一段时间回复测试结果
             delay(500)
             send(device.board1.conn, msg)
-            print("回复1")
+            -- print("回复1")
             -- delay(100)
-            -- local res1 = message(protocol[t.t_prot], {x2_79=1})
+            -- local res1 = message(protocol[t.t_prot], {x2_79=1,x2_81=1,x2_83=1})
             -- local msg1 = CreatSendMain(t.t_cmd, t.t_card, pack(res1))
             -- send(device.board1.conn, msg1)
-            -- print("回复1")
-            delay(100)
-            local res2 = message(protocol[t.t_prot], {x2_79=0})
-            local msg2 = CreatSendMain(t.t_cmd, t.t_card, pack(res2))
-            send(device.board1.conn, msg2)
-            print("回复1")
-            delay(100)
-            local res3 = message(protocol[t.t_prot], {x2_79=1})
-            local msg3 = CreatSendMain(t.t_cmd, t.t_card, pack(res3))
-            send(device.board1.conn, msg3)
+            -- print("回复2")
+            -- delay(100)
+            -- local res2 = message(protocol[t.t_prot], {x2_79=0,x2_81=0,x2_83=0})
+            -- local msg2 = CreatSendMain(t.t_cmd, t.t_card, pack(res2))
+            -- send(device.board1.conn, msg2)
+            -- print("回复3")
+            -- delay(100)
+            -- local res3 = message(protocol[t.t_prot], {x2_79=1,x2_81=1,x2_83=1})
+            -- local msg3 = CreatSendMain(t.t_cmd, t.t_card, pack(res3))
+            -- send(device.board1.conn, msg3)
             if Step == "test_ok" then
                 log.info("测试成功数据已发送")
             else
@@ -399,6 +399,7 @@ function Do_result_r(sub_msg,da)
         local sub = message(protocol.recv_caiji)
         sub.state = 0x02
         sub.dianchineizu = math.random(1, 100)
+        sub.dianchi_v = math.random(1, 100)
         async.send(device.board1.conn,CreatSendMain(0x31, da, pack(sub)))
         print("已发送电池内阻采集数据！")
     end
@@ -440,7 +441,7 @@ function Create_data_iu()
         if I < 0 then
             I = 0
         end
-        U = (U or math.random(1, 1000)) + (math.random(1,100)-d*10) * (Sca2 or 1)
+        U = (U or math.random(1, 200)) + (math.random(1, 60)-d) * (Sca2 or 1)
         table.insert(rcds, {I = I, U = U})
     end
 
@@ -450,9 +451,9 @@ function Create_data_iu()
         Sca1 = 1
     end
 
-    if U > 5000 then
+    if U > 600 then
         Sca2 = -1
-    elseif U < -400 then
+    elseif U < -20 then
         Sca2 = 1
     end
 
@@ -473,7 +474,7 @@ function Do_test_iur(msg, prot)
         if sub_msg.dianzu_check == 0x01 or sub_msg.dianzu_check == 0x02 then
             return Do_result_r(sub_msg, msg.DA)
         else
-            Timer_id = async.interval(200, 200, Do_result_iu, sub_msg, msg.DA)            
+            Timer_id = async.interval(400, 400, Do_result_iu, sub_msg, msg.DA)            
         end
     elseif sub_msg.test_state == 0x02 then
         print(CARDS_NAME[msg.DA] .. "收到：测试结束指令(" .. msg.LEN .. ")")
