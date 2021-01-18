@@ -1,0 +1,55 @@
+
+device udp1_ {
+    udp conn1 { ip: '0.0.0.0', port: 3000, ttl: 20, reuseaddr: true }
+    udp conn2 { ip: '0.0.0.0', port: 4000 }
+    udp conn3 { }
+}
+
+device udp2_ {
+    udp conn1 { ip: '0.0.0.0', port: 5000, ttl: 20}
+    udp conn2 { ip: '0.0.0.0', port: 6000 }
+    udp conn3 { ip: '0.0.0.0', port: 7000 }
+    udp conn4 { ip: '0.0.0.0', port: 8000 }
+}
+
+
+device dev1_ {
+    serial_232 conn1 { 
+        baudrate: 115200, 
+        bytesize: 8,
+        parity: 'none',
+        stopbits: 1,
+        flowcontrol: 'none',  
+    }
+}
+
+device dev2_ {
+    serial_232 conn1 { baudrate: 115200 }
+    
+}
+
+topology topo_rt {
+
+    linking: {
+        link1: [ udp1_.conn1, udp2_.conn1 ],
+        link2: [ udp1_.conn2, udp2_.conn2, udp2_.conn3 ],
+        link3: [ udp1_.conn3, udp2_.conn4 ],
+        link1: [ dev1_.conn1, dev2_.conn1 ],
+    }
+
+    mapping: {
+        etest: [ udp1_, udp2_, dev1_, dev2_ ],
+    }
+
+    binding: {
+        udp1_.conn1: 'auto',
+        udp1_.conn2: 'auto',
+        udp1_.conn3: 'auto',
+        udp2_.conn1: 'auto',
+        udp2_.conn2: 'auto',
+        udp2_.conn3: 'auto',
+        udp2_.conn4: 'auto',
+        dev1_.conn1: 'COM1',
+        dev2_.conn1: 'COM2',
+    }
+}

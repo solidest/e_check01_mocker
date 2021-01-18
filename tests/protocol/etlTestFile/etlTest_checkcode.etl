@@ -1,0 +1,103 @@
+protocol prot32 {
+        segment seg_1 {
+            parser: 'string',
+            length: 3,
+            autovalue: CheckCode(SUM_8)
+        }
+    }
+
+protocol prot33 {
+        segment seg_1 {
+            parser: 'uint32',
+            autovalue: CheckCode(XOR_8)
+        }
+    }
+
+protocol prot34 {
+        segment seg_1 {
+            parser: 'int32 > &',
+            autovalue: CheckCode(XOR_32)
+        }
+    }
+
+protocol prot35 {
+        segment seg_1[2] {
+            parser: 'string',
+            autovalue: CheckCode(XOR_32_FALSE)
+        }
+    }
+
+
+protocol prot36 {
+        segment seg_1[2] {
+            parser: 'int16',
+            autovalue: CheckCode(XOR_32_FALSE)
+        }
+    }
+
+
+
+
+
+
+protocol prot37 {
+        segment seg_1 {
+            parser: 'string',
+            length: 3,
+            autovalue: CheckCode(CRC_4_ITU)
+        }
+    }
+
+protocol prot38 {
+        segment seg_1 {
+            parser: 'uint32',
+            autovalue: CheckCode(CRC_64)
+        }
+    }
+
+protocol prot39 {
+        segment seg_1 {
+            parser: 'int32 > &',
+            autovalue: CheckCode(CRC_40_GSM)
+        }
+    }
+
+protocol prot40 {
+        segment seg_1[2] {
+            parser: 'string',
+            autovalue: CheckCode(CRC_32_Q)
+        }
+    }
+
+
+protocol prot41 {
+        segment seg_1[2] {
+            parser: 'int16',
+            autovalue: CheckCode(CRC_5_EPC)
+        }
+    }
+
+
+protocol prot42 {
+        segment seg_1[2] {
+            parser: 'int16',
+            autovalue: CheckCode(CRC_15_MPT1327)
+        }
+    }
+
+protocol prot43 {
+        segment seg_1[2] {
+            parser: 'int16',
+            autovalue: CheckCode(CRC_16_DECTX)
+        }
+    }
+
+protocol prot44 {
+        segment seg_1[2] {
+            parser: 'int16',
+            autovalue: CheckCode(CRC_16_XMODEM)
+        }
+    }
+
+
+

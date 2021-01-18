@@ -1,0 +1,60 @@
+
+
+//tcp客户端
+device client {
+    tcp_client tcp1 { ip: '127.0.0.1', port: 3333, keepalive: true, nodelay: false, autoconnect: true }
+    tcp_client tcp2 { ip: '127.0.0.1', port: 8888}
+    tcp_client tcp3 { ip: '127.0.0.1' }
+    tcp_client tcp4 { ip: '127.0.0.1', autoconnect: false, port: 5666 }
+    tcp_client tcp5 { }
+    tcp_client tcp6 { }
+    tcp_client tcp7 { }
+}
+
+
+//tcp服务器
+device server {
+    tcp_server srva { ip: '127.0.0.1', port: 8080, keepalive: true, nodelay: true, acceptany: false }
+    tcp_server srvb { ip: '127.0.0.1', port: 8088, keepalive: false, nodelay: true }
+    tcp_server srvc { ip: '127.0.0.1', port: 8089, acceptany: true }
+    tcp_server srvd { ip: '127.0.0.1', port: 8090, keepalive: true, nodelay: false }
+    tcp_server srve { ip: '127.0.0.1', port: 8091, keepalive: false, nodelay: false }
+    tcp_server srvf { ip: '127.0.0.1', port: 8092 }
+    tcp_server srvg { ip: '127.0.0.1', port: 8093 }
+}
+
+
+topology topo_tcp {
+
+    linking: {
+        link1: [ server.srva, client.tcp1 ],
+        link2: [ client.tcp2, client.tcp3, server.srvb, server.srvc],
+        link3: [ server.srvd, client.tcp4 ],
+        link4: [ server.srve, client.tcp5 ],
+        link5: [ client.tcp6, client.tcp7, server.srvf, server.srvg],
+    }
+
+    //设备映射
+    mapping: {
+        etest: [client, server], //软设备
+    }
+
+   //接口绑定
+    binding: {
+        server.srva: 'auto',
+        server.srvb: 'auto',
+        server.srvc: 'auto',
+        server.srvd: 'auto',
+        server.srve: 'auto',
+        server.srvf: 'auto',
+        server.srvg: 'auto',
+        client.tcp1: 'auto',
+        client.tcp2: 'auto',
+        client.tcp3: 'auto',
+        client.tcp4: 'auto',
+        client.tcp5: 'auto',
+        client.tcp6: 'auto',
+        client.tcp7: 'auto',
+    }
+
+}

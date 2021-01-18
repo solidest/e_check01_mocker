@@ -1,0 +1,25 @@
+  protocol prot_15 {
+        segment seg_1 { parser: 'float ! >',autovalue:0}
+        segment seg_2 { parser: 'double ! >',autovalue:0}
+        segment seg_3 { parser: 'int32 ! >',autovalue:0}
+        segment seg_4 { parser: 'uint32 ! >',autovalue:0}
+        segment seg_5 { parser: 'float & >',autovalue:0}
+        segment seg_6 { parser: 'double & >',autovalue:0}
+        segment seg_7 { parser: 'int32 & >',autovalue:0}
+        segment seg_8 { parser: 'uint32 & >',autovalue:0}
+        segment seg_9 { parser: 'float ! <',autovalue:0}
+        segment seg_10 { parser: 'double ! <',autovalue:0}
+        segment seg_11{ parser: 'int32 ! <',autovalue:0}
+        segment seg_12 { parser: 'uint32 ! <',autovalue:0}
+        segment seg_13 { parser: 'float & <',autovalue:0}
+        segment seg_14 { parser: 'double & <',autovalue:0}
+        segment seg_15 { parser: 'int32 & <',autovalue:0}
+        segment seg_16 { parser: 'uint32 & <',autovalue:0}
+
+        segment seg_17 { parser: 'int16 & <',autovalue:0}
+        segment seg_18 { parser: 'uint16 ! <',autovalue:0}
+        segment seg_19 { parser: 'int8 & >',autovalue:0}
+        segment seg_20 { parser: 'uint8 ! >',autovalue:0}
+
+
+  }

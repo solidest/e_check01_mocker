@@ -1,0 +1,166 @@
+
+# 项目设置
+project:
+  id: 72f6f124-d355-403f-9f8d-842a75b3b2dc  # 项目唯一id
+  path: .  # 项目文件根目录，绝对路径或相对路径
+  lib_path: libs
+  xtras:
+    pack: xtras/pack.lua
+    unpack: xtras/unpack.lua
+    check: xtras/check.lua
+    recvfilter: xtras/recvfilter.lua
+  etestd_ip: etest # etest守护服务的ip地址或主机名
+  etestd_port: 1210 # etest守护服务的端口号
+
+# 批量执行设置
+runs:
+  all:
+  - t_udp
+  - t_string
+  - t_tcp
+  - t_serial
+  - t_rt
+  all_net:
+  - t_udp
+  - t_tcp
+  all_api:
+  - t_string
+  all_other:
+  - t_serial
+  all_dev_test:
+  - t_array_string
+  - t_array
+  - t_bytesize
+  - t_tstring
+  - t_checkcode
+  - t_code
+  - t_com
+  - t_double
+  - t_float
+  - t_oneof
+  - t_recv
+  - t_send
+  - t_int
+  - t_uint
+  - t_message_now
+  - t_log
+  - t_time
+  - t_ask
+# 执行程序设置
+program:
+  demo:
+    src: program/demo.lua
+    topology: topo_udp
+    vars:
+
+  t_udp:
+    src: program/t_udp.lua
+    topology: topo_udp
+    vars:
+    # option:
+    #   # 是否启用实时模式
+    #   real_time: true 
+    #   # 实时任务调度周期(us)
+    #   rt_cycle: 1000  
+    #   # 实时任务执行策略, auto:自动 speed_first:执行速度优先 memory_first:内存占用优先
+    #   rt_policy: auto
+  t_tcp:
+    src: program/t_tcp.lua
+    topology: topo_tcp
+    vars:
+  t_string:
+    src: program/t_string.lua
+    topology: topo_udp
+    vars:
+  t_serial:
+    src: program/t_serial.lua
+    topology: topo_serial
+    vars:
+  t_timer:
+    src: program/t_timer.lua
+    topology: topo_udp
+    vars:
+  t_rt:
+    src: program/t_rt.lua
+    topology: topo_rt
+    option:
+      # 是否启用实时模式
+      real_time: true 
+      # 实时任务调度周期(us)
+      rt_cycle: 1000  
+      # 实时任务执行策略, auto:自动 speed_first:执行速度优先 memory_first:内存占用优先
+      rt_policy: auto
+    vars:
+  t_array_string:
+    src: program/array_string.lua
+    topology: topo11
+    vars:
+  t_array:
+    src: program/array.lua
+    topology: topo11
+    vars:
+  t_bytesize:
+    src: program/bytesize.lua
+    topology: topo11
+    vars:
+  t_tstring:
+    src: program/string.lua
+    topology: topo11
+    vars:
+  t_checkcode:
+    src: program/checkcode.lua
+    topology: topo11
+    vars:
+  t_code:
+    src: program/code.lua
+    topology: topo11
+    vars:
+  t_com:
+    src: program/com_.lua
+    topology: topo11
+    vars:
+  t_double:
+    src: program/double.lua
+    topology: topo11
+    vars:
+  t_float:
+    src: program/float.lua
+    topology: topo11
+    vars:
+  t_int:
+    src: program/int.lua
+    topology: topo11
+    vars:
+  t_oneof:
+    src: program/oneof.lua
+    topology: topo11
+    vars:
+  t_recv:
+    src: program/recv.lua
+    topology: topo11
+    vars:
+  t_send:
+    src: program/send.lua
+    topology: topo11
+    vars:
+  t_uint:
+    src: program/uint.lua
+    topology: topo11
+    vars:
+  t_message_now:
+    src: program/message_now.lua
+    topology: topo11
+    vars: 
+  t_ask:
+    src: program/ask.lua
+    topology: topo11
+    vars:
+  t_log:
+    src: program/log.lua
+    topology: topo11
+    vars: 
+  t_time:
+    src: program/timer.lua
+    topology: topo11
+    vars: 
+   

@@ -1,0 +1,89 @@
+
+    protocol prot_12 {
+        segment seg_1 { parser: 'uint1' ,autovalue:0}
+        segment seg_2 { parser: 'uint2' ,autovalue:0}
+
+        segment seg_3 { parser: 'uint3', autovalue:0}
+        segment seg_4 { parser: 'uint4' ,autovalue:0}
+
+        segment seg_5 { parser: 'uint5' ,autovalue:0}
+        segment seg_6 { parser: 'uint6' ,autovalue:0}
+
+        segment seg_7 { parser: 'uint7' ,autovalue:0}
+
+        segment seg_8 { parser: 'uint8' ,autovalue:0}
+        segment seg_9 { parser: 'uint9' ,autovalue:0}
+
+        segment seg_10 { parser: 'uint10' ,autovalue:0}
+        segment seg_11 { parser: 'uint11' ,autovalue:0}
+
+        segment seg_12 { parser: 'uint12' ,autovalue:0}
+        segment seg_13 { parser: 'uint13' ,autovalue:0}
+
+        segment seg_14 { parser: 'uint14' ,autovalue:0}
+        segment seg_15 { parser: 'uint15' ,autovalue:0}
+        segment seg_16 { parser: 'uint16' ,autovalue:0}
+        segment seg_17 { parser: 'uint17' ,autovalue:0}
+        segment seg_18 { parser: 'uint18' ,autovalue:0}
+
+        segment seg_19 { parser: 'uint19' ,autovalue:0}
+        segment seg_20 { parser: 'uint20' ,autovalue:0}
+
+        segment seg_21 { parser: 'uint21' ,autovalue:0}
+        segment seg_22 { parser: 'uint22' ,autovalue:0}
+
+        segment seg_23 { parser: 'uint23' ,autovalue:0}
+
+        segment seg_24 { parser: 'uint24' ,autovalue:0}
+        segment seg_25 { parser: 'uint25' ,autovalue:0}
+
+        segment seg_26 { parser: 'uint26' ,autovalue:0}
+        segment seg_27 { parser: 'uint27' ,autovalue:0}
+
+        segment seg_28 { parser: 'uint28' ,autovalue:0}
+        segment seg_29 { parser: 'uint29' ,autovalue:0}
+
+        segment seg_30 { parser: 'uint30' ,autovalue:0}
+        segment seg_31 { parser: 'uint31' ,autovalue:0}
+        segment seg_32 { parser: 'uint32' ,autovalue:0}
+
+        segment seg_33 { parser: 'uint33' ,autovalue: 0 }
+        segment seg_34 { parser: 'uint34' ,autovalue: 0 }
+        segment seg_35 { parser: 'uint35' ,autovalue: 0 }
+        segment seg_36 { parser: 'uint36' ,autovalue: 0 }
+        segment seg_37 { parser: 'uint37' ,autovalue: 0 }
+        segment seg_38 { parser: 'uint38' ,autovalue: 0 }
+        segment seg_39 { parser: 'uint39' ,autovalue: 0 }
+        segment seg_40 { parser: 'uint40' ,autovalue: 0 }
+        segment seg_41 { parser: 'uint41' ,autovalue: 0 }
+
+        segment seg_42 { parser: 'uint42' ,autovalue: 0 }
+        segment seg_43 { parser: 'uint43' ,autovalue: 0 }
+        segment seg_44 { parser: 'uint44' ,autovalue: 0 }
+        segment seg_45 { parser: 'uint45' ,autovalue: 0 }
+        segment seg_46 { parser: 'uint46' ,autovalue: 0 }
+        segment seg_47 { parser: 'uint47' ,autovalue: 0 }
+        segment seg_48 { parser: 'uint48' ,autovalue: 0 }
+        segment seg_49 { parser: 'uint49' ,autovalue: 0 }
+        segment seg_50 { parser: 'uint50' ,autovalue: 0 }
+
+        segment seg_51 { parser: 'uint51' ,autovalue: 0 }
+        segment seg_52 { parser: 'uint52' ,autovalue: 0 }
+        segment seg_53 { parser: 'uint53' ,autovalue: 0 }
+        segment seg_54 { parser: 'uint54' ,autovalue: 0 }
+        segment seg_55 { parser: 'uint55' ,autovalue: 0 }
+        segment seg_56 { parser: 'uint56' ,autovalue: 0 }
+        segment seg_57 { parser: 'uint57' ,autovalue: 0 }
+        segment seg_58 { parser: 'uint58' ,autovalue: 0 }
+        segment seg_59 { parser: 'uint59' ,autovalue: 0 }
+
+        segment seg_60 { parser: 'uint60' ,autovalue: 0 }
+        segment seg_61 { parser: 'uint61' ,autovalue: 0 }
+        segment seg_62 { parser: 'uint62' ,autovalue: 0 }
+        segment seg_63 { parser: 'uint63' ,autovalue: 0 }
+        segment seg_64 { parser: 'uint64' ,autovalue: 0 }
+        
+    }
+
+
+

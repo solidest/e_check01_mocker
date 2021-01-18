@@ -1,0 +1,32 @@
+
+device dev1 {
+    serial_232 conn1 { 
+        baudrate: 115200, 
+        bytesize: 8,
+        parity: 'none',
+        stopbits: 1,
+        flowcontrol: 'none',  
+    }
+}
+
+device dev2 {
+    serial_232 conn1 { baudrate: 115200 }
+    
+}
+
+topology topo_serial {
+
+    linking: {
+        link1: [ dev1.conn1, dev2.conn1 ],
+
+    }
+
+    mapping: {
+        etest: [ dev1, dev2 ],
+    }
+
+    binding: {
+        dev1.conn1: 'COM1',
+        dev2.conn1: 'COM2',
+    }
+}

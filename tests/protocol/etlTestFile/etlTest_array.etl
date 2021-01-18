@@ -1,0 +1,46 @@
+    protocol prot19 {
+        segment seg_1[8] { parser: 'uint32', autovalue: 0 }
+        segment seg_2[3] { parser: 'int16' }
+        segment seg_3 { parser: 'float', autovalue: 0 }
+        segment seg_4 { parser: 'float' }
+    }
+
+
+   protocol prot20 {
+        segment seg_1[1] { parser: 'int32', autovalue: 0 }
+        segment seg_2[2] { parser: 'float' }
+        segment seg_4 { parser: 'double <' }
+    }
+
+   protocol prot21 {
+        segment seg_1[1] { parser: 'uint32', autovalue: 0 }
+        segment seg_2[3] { parser: 'int16' }
+        segment seg_3 { parser: 'float', autovalue: 0 }
+        segment seg_4[3] { parser: 'float &' }
+    }
+
+
+   protocol prot22 {
+        segment seg_1[1] { parser: 'int16', autovalue: 0 }
+        segment seg_2[3] { parser: 'int24  > &',autovalue: 0  }
+        segment seg_5[1] { parser: 'uint8  < !',}
+        segment seg_3 { parser: 'float', autovalue: 0 }
+        segment seg_4[3] { parser: 'float ! <' }
+    }
+protocol prot_array {
+    segment seg_1[2] {parser: "int64", autovalue: [23,2]}
+    segment seg_2[2] { parser: 'string', length:3, autovalue: ["qwe","222"] }
+    segment seg_3[0] {  }
+}
+
+protocol prot_arrays {
+    segment head { parser: 'uint64', autovalue: 1 }
+    segments array {
+        segment number { parser: 'uint8', autovalue: 1 }
+        segments list {
+            segment seg_1 {parser: 'uint16',autovalue: 1 }
+            segment seg_2 {parser: "string", endwith: "#3x@#@##$%", autovalue: "12"}
+        }
+    }
+    
+}

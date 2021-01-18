@@ -1,0 +1,160 @@
+
+// 硬件接口
+device dev11 {
+    udp srv_1 { ip: '127.0.0.1', port: 9099, ttl: 20 }
+    udp c2 { ip: '127.0.0.1', port: 9098 }
+}
+//etest控制的设备
+device dev12 {
+    udp udp_name {ip: '127.0.0.1',port:9097}
+    udp s1 { ip: '127.0.0.1',port:9096 }
+    udp s2 { ip: '127.0.0.1',port:9095 }
+    udp s3 { ip: '127.0.0.1' ,port:9094}
+    udp s4 { ip: '127.0.0.1' ,port:9093}
+ 
+
+}
+
+
+//拓扑结构
+topology topo11 {
+
+
+    linking: {
+        total: [dev12.s1, dev12.s2,dev12.s4],   //总线
+        link: [ dev12.udp_name,dev11.srv_1], //点到点连接
+        link_: [dev12.s3,dev11.c2]
+    }
+
+    //设备映射
+    mapping: {
+        uut: [dev11],   //被测硬件单元
+        etest: [dev12], //软设备
+    }
+
+    //接口绑定
+    binding: {
+        dev12.s1: 'auto',
+        dev12.s2: 'auto',
+        dev12.s3: 'auto',
+        dev12.s4: 'auto',
+        dev12.udp_name: 'auto',
+        
+    }
+}
+
+
+//仿真设备1
+device dev_a {
+
+    udp conn { ip: '127.0.0.1', port: 8001}
+}
+
+
+//仿真设备2
+device dev_b {
+
+    udp conn { ip: '127.0.0.1', port: 8002}
+}
+
+//仿真设备3
+device dev_c {
+
+    udp conn { ip: '127.0.0.1', port: 8003}
+}
+
+
+
+//主控设备
+device main_ctr {
+    udp conn {ip: '127.0.0.1',port:8888}
+
+}
+
+//拓扑结构主控
+topology topo_main {
+
+    linking: {
+        // total: [dev112.s1, dev11.c1, dev12.s2],   //总线
+        link1: [ main_ctr.conn,dev_a.conn,dev_b.conn,dev_c.conn], //点到点连接,etest与仿真接口dev111
+    }
+    //设备映射
+    mapping: {
+        uut: [dev_a,dev_b,dev_c],   //被测硬件单元
+        etest: [main_ctr], //软设备
+    }
+
+
+   //接口绑定
+    binding: {
+        main_ctr.conn: 'auto',
+    }
+
+}
+
+
+//拓扑结构设备a
+topology topo_a {
+
+    linking: {
+        // total: [dev112.s1, dev11.c1, dev12.s2],   //总线
+        link1: [ main_ctr.conn,dev_a.conn], //点到点连接,etest与仿真接口dev111
+    }
+    //设备映射
+    mapping: {
+        uut: [main_ctr],   //被测硬件单元
+        etest: [dev_a], //软设备
+    }
+
+
+   //接口绑定
+    binding: {
+        dev_a.conn: 'auto',
+    }
+
+}
+
+
+//拓扑结构设备a
+topology topo_b {
+
+    linking: {
+        // total: [dev112.s1, dev11.c1, dev12.s2],   //总线
+        link1: [ main_ctr.conn,dev_b.conn], //点到点连接,etest与仿真接口dev111
+    }
+    //设备映射
+    mapping: {
+        uut: [main_ctr],   //被测硬件单元
+        etest: [dev_b], //软设备
+    }
+
+
+   //接口绑定
+    binding: {
+        dev_b.conn: 'auto',
+    }
+
+}
+
+
+
+//拓扑结构设备c
+topology topo_c {
+
+    linking: {
+        // total: [dev112.s1, dev11.c1, dev12.s2],   //总线
+        link1: [ main_ctr.conn,dev_c.conn], //点到点连接,etest与仿真接口dev111
+    }
+    //设备映射
+    mapping: {
+        uut: [main_ctr],   //被测硬件单元
+        etest: [dev_c], //软设备
+    }
+
+
+   //接口绑定
+    binding: {
+        dev_c.conn: 'auto',
+    }
+
+}

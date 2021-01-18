@@ -1,0 +1,93 @@
+
+    protocol prot_11 {
+        segment seg_1 { parser: 'int1' ,autovalue:0}
+        segment seg_2 { parser: 'int2',autovalue:0 }
+
+        segment seg_3 { parser: 'int3' ,autovalue:0}
+        segment seg_4 { parser: 'int4' ,autovalue:0}
+
+        segment seg_5 { parser: 'int5' ,autovalue:0}
+        segment seg_6 { parser: 'int6' ,autovalue:0}
+
+        segment seg_7 { parser: 'int7' ,autovalue:0}
+
+        segment seg_8 { parser: 'int8' ,autovalue:0}
+        segment seg_9 { parser: 'int9' ,autovalue:0}
+
+        segment seg_10 { parser: 'int10' ,autovalue:0}
+        segment seg_11 { parser: 'int11' ,autovalue:0}
+
+        segment seg_12 { parser: 'int12' ,autovalue:0}
+        segment seg_13 { parser: 'int13' ,autovalue:0}
+
+        segment seg_14 { parser: 'int14',autovalue:0}
+        segment seg_15 { parser: 'int15' ,autovalue:0}
+        segment seg_16 { parser: 'int16' ,autovalue:0}
+        segment seg_17 { parser: 'int17' ,autovalue:0}
+        segment seg_18 { parser: 'int18' ,autovalue:0}
+
+        segment seg_19 { parser: 'int19' ,autovalue:0}
+        segment seg_20 { parser: 'int20' ,autovalue:0}
+
+        segment seg_21 { parser: 'int21' ,autovalue:0}
+        segment seg_22 { parser: 'int22' ,autovalue:0}
+
+        segment seg_23 { parser: 'int23' ,autovalue:0}
+
+        segment seg_24 { parser: 'int24' ,autovalue:0}
+        segment seg_25 { parser: 'int25' ,autovalue:0}
+
+        segment seg_26 { parser: 'int26' ,autovalue:0}
+        segment seg_27 { parser: 'int27' ,autovalue:0}
+
+        segment seg_28 { parser: 'int28' ,autovalue:0}
+        segment seg_29 { parser: 'int29' ,autovalue:0}
+
+        segment seg_30 { parser: 'int30' ,autovalue:0}
+        segment seg_31 { parser: 'int31' ,autovalue:0}
+        segment seg_32 { parser: 'int32' ,autovalue:0}
+        segment seg_33 { parser: 'int33' ,autovalue:0}
+        segment seg_34 { parser: 'int34' ,autovalue:0}
+
+        segment seg_35 { parser: 'int35' ,autovalue:0}
+        segment seg_36 { parser: 'int36' ,autovalue:0}
+        segment seg_37 { parser: 'int37' ,autovalue:0}
+        segment seg_38 { parser: 'int38' ,autovalue:0}
+        segment seg_39 { parser: 'int39' ,autovalue:0}
+
+        segment seg_40 { parser: 'int40' ,autovalue:0}
+        segment seg_41 { parser: 'int41' ,autovalue:0}
+        segment seg_42 { parser: 'int42' ,autovalue:0}
+
+        segment seg_43 { parser: 'int43' ,autovalue:0}
+        segment seg_44 { parser: 'int44' ,autovalue:0}
+        segment seg_45 { parser: 'int45' ,autovalue:0}
+        segment seg_46 { parser: 'int46' ,autovalue:0}
+        segment seg_47 { parser: 'int47' ,autovalue:0}
+
+        segment seg_48 { parser: 'int48' ,autovalue:0}
+        segment seg_49 { parser: 'int49' ,autovalue:0}
+        segment seg_50 { parser: 'int50' ,autovalue:0}
+        segment seg_51 { parser: 'int51' ,autovalue:0}
+        segment seg_52 { parser: 'int52' ,autovalue:0}
+        segment seg_53 { parser: 'int53' ,autovalue:0}
+        segment seg_54 { parser: 'int54' ,autovalue:0}
+        segment seg_55 { parser: 'int55' ,autovalue:0}
+
+        segment seg_56 { parser: 'int56' ,autovalue:0}
+        segment seg_57 { parser: 'int57' ,autovalue:0}
+        segment seg_58 { parser: 'int58' ,autovalue:0}
+        
+        segment seg_59 { parser: 'int59' ,autovalue:0}
+        segment seg_60 { parser: 'int60' ,autovalue:0}
+        segment seg_61 { parser: 'int61' ,autovalue:0}
+        segment seg_62 { parser: 'int62' ,autovalue:0}
+        segment seg_63 { parser: 'int63' ,autovalue:0}
+
+        segment seg_64 { parser: 'int64' ,autovalue:0}
+
+
+    }
+
+
+

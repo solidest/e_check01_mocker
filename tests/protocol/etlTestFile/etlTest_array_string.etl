@@ -1,0 +1,57 @@
+   protocol prot27 {
+        segment seg_1[1] { parser: 'int32', autovalue: 0 }
+        segment seg_2[2] { parser: 'string',autovalue:0 }
+        segment seg_3 { parser: 'double <' }
+    }
+
+
+   protocol prot28 {
+        segment type1 { parser: 'uint32' }
+        segment type2 { parser: 'uint8', autovalue: this.type1 * 4/2 - 2 }
+        oneof(this.type1==3) {
+            segment x { parser: 'int16',autovalue:2 }
+            oneof (this.x== 3) { 
+                segment p { parser: 'int32',autovalue:-6}
+                oneof (this.p == -6) {
+                    segment p1 { parser: 'int32',autovalue:this.p * 2 -4 + 1}
+                    segment p2 {parser:'string',autovalue:"1223\0"}
+                }
+             }
+            oneof (this.x== 2) { 
+                segment p { parser: 'int8',autovalue:-6}
+                oneof (this.p == -6) {
+                    segment p1 { parser: 'int32',autovalue:this.p * 2 -4 + 1}
+                    segment p2 {parser:'string',autovalue:"1223\0"}
+                }
+             }
+            oneof (this.x== 1) { 
+                segment p { parser: 'uint1',autovalue:1}
+             }
+        }
+        oneof(this.type1==0) {
+            segment x { parser: 'float' ,autovalue:1.2}
+            segment y { parser: 'float' ,autovalue:1.2}
+            segment z { parser: 'double' ,autovalue:1.2}
+        }
+        oneof(this.type1==1) {
+            segment x { parser: 'double' ,,autovalue:0}
+
+        }
+        segment aa {  }
+        oneof(this.type2==1) {
+            segment x1 { parser: 'uint32', autovalue: 15 }
+            oneof(this.x1==15) {
+                segment x11 {parser: 'uint32',autovalue:2}
+                }
+        }
+        oneof(this.type2==2) {
+            segment x2 { parser: 'float' ,autovalue:2.1}
+        }
+        segment test { parser: 'float', autovalue: 3*(1+this.type1)+1}
+    }
+
+  protocol prot29 {
+        // segment seg_1[1] { parser: 'int32', autovalue: }
+        //segment seg_2[3] { parser: 'string',autovalue:{} }
+        segment seg_3 { parser: 'double <' }
+    }

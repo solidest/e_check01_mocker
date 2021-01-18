@@ -1,0 +1,8 @@
+
+    protocol prot_13 {
+        segment seg_1 { parser: 'float',autovalue:0}
+        segment seg_2 { parser: 'double',autovalue:0}
+    }
+
+
+

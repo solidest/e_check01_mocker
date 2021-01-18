@@ -1,0 +1,195 @@
+    protocol prot23 {
+        segment type1 { parser: 'int8', autovalue: 0 }
+        segment type2 { parser: 'int8', autovalue: this.type1*2 }
+        oneof(this.type1==2) {
+            segment x { parser: 'float', autovalue: 0.11  }
+            segment y { parser: 'float', autovalue: 1.11 }
+        }
+        oneof(this.type1==3) {
+            segment x { parser: 'float', autovalue: 0  }
+            segment y { parser: 'float', autovalue: 0  }
+            segment z { parser: 'double', autovalue: 0  }
+        }
+        oneof(this.type1==0) {
+            segment x { parser: 'double' , autovalue: 0.001 }
+
+        }
+        segment aa {  }
+        oneof(this.type2==1) {
+            segment x1 { parser: 'float', autovalue: 2.5 }
+        }
+        oneof(this.type2==2) {
+            segment x2 { parser: 'float' , autovalue: 0 }
+        }
+        segment test { parser: 'float', autovalue: 2*(1+this.type1)-1}
+    }
+
+
+
+    protocol prot24 {
+        segment type1 { parser: 'uint32' }
+        segment type2 { parser: 'uint8', autovalue: this.type1 * 4/2 - 2 }
+        oneof(this.type1==2) {
+            segment x { parser: 'int16',autovalue:3 }
+            oneof (this.x== 3) { 
+                segment p { parser: 'float',autovalue:1.6}
+             }
+            oneof (this.x== 2) { 
+                segment p { parser: 'double',autovalue:1.06}
+             }
+            oneof (this.x== 1) { 
+                segment p { parser: 'uint1',autovalue:1}
+             }
+        }
+        oneof(this.type1==3) {
+            segment x { parser: 'float' ,autovalue:1.2}
+            segment y { parser: 'float' ,autovalue:1.2}
+            segment z { parser: 'double' ,autovalue:1.2}
+        }
+        oneof(this.type1==0) {
+            segment x { parser: 'double' ,,autovalue:0}
+
+        }
+        segment aa {  }
+        oneof(this.type2==1) {
+            segment x1 { parser: 'float', autovalue: 2.23 }
+        }
+        oneof(this.type2==2) {
+            segment x2 { parser: 'float' }
+        }
+        segment test { parser: 'float', autovalue: 3*(1+this.type1)+1}
+    }
+
+
+
+    protocol prot25 {
+        segment type1 { parser: 'uint32' }
+        segment type2 { parser: 'uint8', autovalue: this.type1 * 4/2 - 2 }
+        oneof(this.type1==3) {
+            segment x { parser: 'int16',autovalue:2 }
+            oneof (this.x== 3) { 
+                segment p { parser: 'int32',autovalue:-6}
+                oneof (this.p == -6) {
+                    segment p1 { parser: 'int32',autovalue:this.p * 2 -4 + 1}
+                }
+             }
+            oneof (this.x== 2) { 
+                segment p { parser: 'int8',autovalue:-6}
+                oneof (this.p == -6) {
+                    segment p1 { parser: 'int32',autovalue:this.p * 2 -4 + 1}
+                }
+             }
+            oneof (this.x== 1) { 
+                segment p { parser: 'uint1',autovalue:1}
+             }
+        }
+        oneof(this.type1==0) {
+            segment x { parser: 'float' ,autovalue:1.2}
+            segment y { parser: 'float' ,autovalue:1.2}
+            segment z { parser: 'double' ,autovalue:1.2}
+        }
+        oneof(this.type1==2) {
+            segment x { parser: 'double' ,,autovalue:0}
+
+        }
+        segment aa {  }
+        oneof(this.type2==1) {
+            segment x1 { parser: 'uint32', autovalue: 15 }
+            oneof(this.x1==15) {
+                segment x11 {parser: 'uint32',autovalue:2}
+                }
+        }
+        oneof(this.type2==2) {
+            segment x2 { parser: 'float' }
+        }
+        segment test { parser: 'float', autovalue: 3*(1+this.type1)+1}
+    }
+
+
+
+
+
+    protocol prot26 {
+        segment type1 { parser: 'uint32' }
+        segment type2 { parser: 'uint8', autovalue: this.type1 * 4/2 - 2 }
+        oneof(this.type1==3) {
+            segment x { parser: 'int16',autovalue:2 }
+            oneof (this.x== 3) { 
+                segment p { parser: 'int32',autovalue:-6}
+                oneof (this.p == -6) {
+                    segment p1 { parser: 'int32',autovalue:this.p * 2 -4 + 1}
+                    
+                }
+             }
+            oneof (this.x== 2) { 
+                segment p { parser: 'int8',autovalue:-6}
+                oneof (this.p == -6) {
+                    segment p1 { parser: 'int32',autovalue:this.p * 2 -4 + 1}
+                }
+             }
+            oneof (this.x== 1) { 
+                segment p { parser: 'uint1',autovalue:1}
+             }
+        }
+        oneof(this.type1==0) {
+            segment x { parser: 'float' ,autovalue:1.2}
+            segment y { parser: 'float' ,autovalue:1.2}
+            segment z { parser: 'double' ,autovalue:1.2}
+        }
+        oneof(this.type1==2) {
+            segment x { parser: 'double' ,,autovalue:0}
+
+        }
+        segment aa {  }
+        oneof(this.type2==1) {
+            segment x1 { parser: 'uint32', autovalue: 15 }
+            oneof(this.x1==15) {
+                segment x11 {parser: 'uint32',autovalue:65535}
+                segment p2 {parser:'string',autovalue:"qwe\0"}
+                }
+        }
+        oneof(this.type2==2) {
+            segment x2 { parser: 'float' }
+        }
+        segment test { parser: 'float', autovalue: 3*(1+this.type1)+1}
+    }
+
+protocol oneof_prot {
+    segment xx { parser: 'uint8',autovalue: 8}
+    segment aa { parser: 'uint8', autovalue: 0 }
+    oneof(this.xx + 1 == 3) {
+        segments oneof_name {
+            segment name { parser: 'int16', autovalue: 3 } //ByteSize(this.aa)
+            segment str { parser: 'string', length: 3, autovalue: "123"}
+            oneof(this.oneof_name.name == 3) {
+                segment seg_float { parser: 'float', autovalue: 1.11 }
+                segment double {parser: 'double', autovalue: ByteSize(this.oneof_name.seg_float)}
+                segment list[2] {parser: 'int32',autovalue: [25,26]}
+                oneof(this.oneof_name.seg_float > 1.1) {
+                    segments test {
+                        segment qq {parser:'int24',autovalue: 0}
+                        segments qs {
+                            segment ww {parser: 'uint24', autovalue: 2}
+                            segment ee {parser: 'uint40', autovalue: 0}
+                            oneof(this.oneof_name.test.qs.ww == 24){
+                                segment tt[2] {parser:'string',endwith:"12",autovalue: ['qw',"er"]}
+                            }
+                            oneof(this.oneof_name.test.qs.ww != 24){
+                                segment string {parser:'string',endwith:"@@",autovalue: '123'}
+                            }
+                        } 
+                    }
+                }
+            }
+        }        
+    }
+}
+
+protocol one_prot {
+    segment str {parser: 'string', endwith: '#', autovalue: '3'}
+    segment int {parser: 'uint64', autovalue: 0 }
+    oneof(this.str == "123"){
+        segment name {parser: 'int32',autovalue: 0}
+        segment float {parser:'float',autovalue: 0}
+    }
+}
