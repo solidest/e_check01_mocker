@@ -75,3 +75,18 @@
 #11  0x7fa3   in start_thread at /home/believe/etest/e_check01/bin/etestx
 #12  0xf94cf  in clone at /home/believe/etest/e_check01/bin/etestx
 
+0119 15:14:46] SIGSEGV: segmentation fault
+#0  0x4f2c4f in internshrstr at lstring.c:?
+#1  0x4e839d in lua_pushlstring at /home/believe/e_check01_mocker/bin/etestx
+#2  0x4385f7 in setvalue(nlohmann::basic_json<std::map, std::vector, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, long, unsigned long, double, std::allocator, nlohmann::adl_serializer>&, lua_State*) at /home/solidest/Desktop/etest_runner/src/utility/lua_json.cpp:373
+#3  0x461389 in etl_reply(nlohmann::basic_json<std::map, std::vector, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, long, unsigned long, double, std::allocator, nlohmann::adl_serializer>&) at /home/solidest/Desktop/etest_runner/src/api/ask.cc:32
+#4  0x49a5d9 in _on_command(uv_async_s*) at /home/solidest/Desktop/etest_runner/src/runner.cc:332
+#5  0x4cc4e2 in uv__async_io at async.c:?
+#6  0x4dcdcf in uv__io_poll at /home/believe/e_check01_mocker/bin/etestx
+#7  0x4cce61 in uv_run at /home/believe/e_check01_mocker/bin/etestx
+#8  0x49991d in run(void*) at /home/solidest/Desktop/etest_runner/src/runner.cc:121
+#9  0x49ca09 in xx::Function1::run() at /home/solidest/Desktop/etest_runner/include/base/unix/../closure.h:47
+#10  0x49cc0b in Thread::_Run(void*) at /home/solidest/Desktop/etest_runner/include/base/unix/thread.h:167
+#11  0x7fa3   in start_thread at /home/believe/e_check01_mocker/bin/etestx
+#12  0xf94cf  in clone at /home/believe/e_check01_mocker/bin/etestx
+

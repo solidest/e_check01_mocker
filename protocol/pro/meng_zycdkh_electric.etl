@@ -1,0 +1,95 @@
+// 04A 载员舱电控盒
+bitrl protocol zycdkh_electric{ //载员舱电控盒通信协议解析 04A
+    segment test_code {parser: 'uint8', autovalue: 0}
+    segment test_len {parser: 'uint8', autovalue: 0}
+    segment comm_state {parser: 'uint8', autovalue: 0} //被测设备通讯状态被测设备通讯状态 0：未知 1：正常 2：异常
+    segment check_count {parser: 'uint8', autovalue: 0} //自检次数
+    segment check_info {parser: 'uint8', autovalue: 0} //自检信息 00正常
+    // 后排水泵
+    segment hpsb0 {parser: 'uint1', autovalue: 0} //电子开关状态 0：关闭 1：打开
+    segment hpsb1 {parser: 'uint1', autovalue: 0} //过流 0：正常 1：过流
+    segment hpsb2 {parser: 'uint1', autovalue: 0} //过压 0：正常 1：过压
+    segment hpsb3 {parser: 'uint1', autovalue: 0} //保留1
+    segment hpsb4 {parser: 'uint1', autovalue: 0} //过温 0：正常 1：过温
+    segment hpsb5 {parser: 'uint3', autovalue: 0} //保留2
+    segment bl1 {parser: 'uint16', autovalue: 0} //保留不处理
+    // 蓄电池加温
+    segment xdcjw0 {parser: 'uint1', autovalue: 0} //电子开关状态 0：关闭 1：打开
+    segment xdcjw1 {parser: 'uint1', autovalue: 0} //过流 0：正常 1：过流
+    segment xdcjw2 {parser: 'uint1', autovalue: 0} //过压 0：正常 1：过压
+    segment xdcjw3 {parser: 'uint1', autovalue: 0} //保留1
+    segment xdcjw4 {parser: 'uint1', autovalue: 0} //过温 0：正常 1：过温
+    segment xdcjw5 {parser: 'uint3', autovalue: 0} //保留2
+    // 制氧机
+    segment zyj0 {parser: 'uint1', autovalue: 0} //电子开关状态 0：关闭 1：打开
+    segment zyj1 {parser: 'uint1', autovalue: 0} //过流 0：正常 1：过流
+    segment zyj2 {parser: 'uint1', autovalue: 0} //过压 0：正常 1：过压
+    segment zyj3 {parser: 'uint1', autovalue: 0} //保留1
+    segment zyj4 {parser: 'uint1', autovalue: 0} //过温 0：正常 1：过温
+    segment zyj5 {parser: 'uint3', autovalue: 0} //保留2
+    // 空调
+    segment kt0 {parser: 'uint1', autovalue: 0} //电子开关状态 0：关闭 1：打开
+    segment kt1 {parser: 'uint1', autovalue: 0} //过流 0：正常 1：过流
+    segment kt2 {parser: 'uint1', autovalue: 0} //过压 0：正常 1：过压
+    segment kt3 {parser: 'uint1', autovalue: 0} //保留1
+    segment kt4 {parser: 'uint1', autovalue: 0} //过温 0：正常 1：过温
+    segment kt5 {parser: 'uint3', autovalue: 0} //保留2
+    segment bl2 {parser: 'uint8', autovalue: 0} //保留不处理
+    // 载员舱潜望镜加温
+    segment qwjjw0 {parser: 'uint1', autovalue: 0} //电子开关状态 0：关闭 1：打开
+    segment qwjjw1 {parser: 'uint1', autovalue: 0} //过流 0：正常 1：过流
+    segment qwjjw2 {parser: 'uint1', autovalue: 0} //过压 0：正常 1：过压
+    segment qwjjw3 {parser: 'uint1', autovalue: 0} //保留1
+    segment qwjjw4 {parser: 'uint1', autovalue: 0} //过温 0：正常 1：过温
+    segment qwjjw5 {parser: 'uint3', autovalue: 0} //保留2
+    // 试验数据采集盒
+    segment sysjcjh0 {parser: 'uint1', autovalue: 0} //电子开关状态 0：关闭 1：打开
+    segment sysjcjh1 {parser: 'uint1', autovalue: 0} //过流 0：正常 1：过流
+    segment sysjcjh2 {parser: 'uint1', autovalue: 0} //过压 0：正常 1：过压
+    segment sysjcjh3 {parser: 'uint1', autovalue: 0} //保留1
+    segment sysjcjh4 {parser: 'uint1', autovalue: 0} //过温 0：正常 1：过温
+    segment sysjcjh5 {parser: 'uint3', autovalue: 0} //保留2
+    // 刹车灯
+    segment scd0 {parser: 'uint1', autovalue: 0} //电子开关状态 0：关闭 1：打开
+    segment scd1 {parser: 'uint1', autovalue: 0} //过流 0：正常 1：过流
+    segment scd2 {parser: 'uint1', autovalue: 0} //过压 0：正常 1：过压
+    segment scd3 {parser: 'uint1', autovalue: 0} //保留1
+    segment scd4 {parser: 'uint1', autovalue: 0} //过温 0：正常 1：过温
+    segment scd5 {parser: 'uint3', autovalue: 0} //保留2
+    // 倒车灯
+    segment dcd0 {parser: 'uint1', autovalue: 0} //电子开关状态 0：关闭 1：打开
+    segment dcd1 {parser: 'uint1', autovalue: 0} //过流 0：正常 1：过流
+    segment dcd2 {parser: 'uint1', autovalue: 0} //过压 0：正常 1：过压
+    segment dcd3 {parser: 'uint1', autovalue: 0} //保留1
+    segment dcd4 {parser: 'uint1', autovalue: 0} //过温 0：正常 1：过温
+    segment dcd5 {parser: 'uint3', autovalue: 0} //保留2
+    // 右后转向灯
+    segment yhzxd0 {parser: 'uint1', autovalue: 0} //电子开关状态 0：关闭 1：打开
+    segment yhzxd1 {parser: 'uint1', autovalue: 0} //过流 0：正常 1：过流
+    segment yhzxd2 {parser: 'uint1', autovalue: 0} //过压 0：正常 1：过压
+    segment yhzxd3 {parser: 'uint1', autovalue: 0} //保留1
+    segment yhzxd4 {parser: 'uint1', autovalue: 0} //过温 0：正常 1：过温
+    segment yhzxd5 {parser: 'uint3', autovalue: 0} //保留2
+    // 左后转向灯
+    segment zhzxd0 {parser: 'uint1', autovalue: 0} //电子开关状态 0：关闭 1：打开
+    segment zhzxd1 {parser: 'uint1', autovalue: 0} //过流 0：正常 1：过流
+    segment zhzxd2 {parser: 'uint1', autovalue: 0} //过压 0：正常 1：过压
+    segment zhzxd3 {parser: 'uint1', autovalue: 0} //保留1
+    segment zhzxd4 {parser: 'uint1', autovalue: 0} //过温 0：正常 1：过温
+    segment zhzxd5 {parser: 'uint3', autovalue: 0} //保留2
+    // 后示廓灯
+    segment hskd0 {parser: 'uint1', autovalue: 0} //电子开关状态 0：关闭 1：打开
+    segment hskd1 {parser: 'uint1', autovalue: 0} //过流 0：正常 1：过流
+    segment hskd2 {parser: 'uint1', autovalue: 0} //过压 0：正常 1：过压
+    segment hskd3 {parser: 'uint1', autovalue: 0} //保留1
+    segment hskd4 {parser: 'uint1', autovalue: 0} //过温 0：正常 1：过温
+    segment hskd5 {parser: 'uint3', autovalue: 0} //保留2
+
+    segment hyxyl { parser: 'uint16<', autovalue: 0} //后油箱油量 0~626
+    segment zyxyl { parser: 'uint16<', autovalue: 0} //主油箱油量 0~176
+    segment xdcwd { parser: 'uint8', autovalue: 0} //蓄电池温度 50~70
+    // 超宽
+    segment zck {parser: 'uint1', autovalue: 0} //左超宽 0：未超宽 1：超宽
+    segment yck {parser: 'uint1', autovalue: 0} //右超宽 0：未超宽 1：超宽
+    segment bl3 {parser: 'uint6', autovalue: 0x3f} //保留2 全填1
+}

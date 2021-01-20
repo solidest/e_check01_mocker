@@ -1,9 +1,20 @@
 bitrl protocol prot_usart {
-    segment type {parser: 'uint8', autovalue: 0x05}
-    segment path {parser: 'uint8', autovalue: 0}
-    segment check {parser: 'uint8', autovalue: 0}
-    segment baud_rate {parser: 'uint8', autovalue: 0}
-    segment data_bit {parser: 'uint8', autovalue: 0x08}
-    segment stop_bit {parser: 'uint8', autovalue: 0}
-    segment data_len {parser: 'uint8', autovalue: 0}
+    segment type {parser: 'uint8', autovalue: 0x05}  //通讯类型
+    segment path {parser: 'uint8', autovalue: 0} //通道
+    segment check {parser: 'uint8', autovalue: 0} //校验
+    segment baud_rate {parser: 'uint8', autovalue: 0} //波特率
+    segment data_bit {parser: 'uint8', autovalue: 0x08} //数据位
+    segment stop_bit {parser: 'uint8', autovalue: 0} //停止位
+    segment data_len {parser: 'uint8', autovalue: 0} //数据长度
+    segment data [this.data_len] {parser: 'uint8'} //数据字节
+}
+// 数据内容为空
+bitrl protocol prot_usart_nil {
+    segment type {parser: 'uint8', autovalue: 0x05}  //通讯类型
+    segment path {parser: 'uint8', autovalue: 0} //通道
+    segment check {parser: 'uint8', autovalue: 0} //校验
+    segment baud_rate {parser: 'uint8', autovalue: 0} //波特率
+    segment data_bit {parser: 'uint8', autovalue: 0x08} //数据位
+    segment stop_bit {parser: 'uint8', autovalue: 0} //停止位
+    segment data_len {parser: 'uint8', autovalue: 0} //数据长度
 }

@@ -1,0 +1,60 @@
+bitrl protocol dlc { //动力舱通信协议解析 88
+     segment test_code {parser: 'uint8', autovalue: 0} //测试项名称
+     segment test_len {parser: 'uint8', autovalue: 0} //长度
+     segment comm_state {parser: 'uint8', autovalue: 0} ////通信状态 0未知 1正常 2异常
+     segment bsxyw {parser: 'uint16<', autovalue: 0} //变速箱油温 0.01℃
+     segment bsxyy {parser: 'uint16<', autovalue: 0} //变速箱油压 0.01Mpa
+     segment ssyyyy {parser: 'uint16<', autovalue: 0} //水上液压油压 0.01Mpa
+     segment fscdyw {parser: 'uint16<', autovalue: 0} //风扇传动油温 0.01℃  
+     segment dlnw {parser: 'uint16<', autovalue: 0} //动力内温 0.01℃ 
+     segment yjlc {parser: 'uint32<', autovalue: 0} //永久里程 km
+     segment xsmtxs {parser: 'uint32<', autovalue: 0} //行驶摩托小时 s
+     segment yxmtxs {parser: 'uint32<', autovalue: 0} //运行摩托小时 s  
+     segment dqlc {parser: 'uint32<', autovalue: 0} //当前里程 km
+     segment cs {parser: 'uint16<', autovalue: 0} //车速
+     segment zs {parser: 'uint16<', autovalue: 0} //转速
+     segment by {parser: 'uint32<', autovalue: 0} //备用
+     segment drsgzzs {parser: 'uint1', autovalue: 0} //电热塞工作指示 0关1开
+     segment kqlzlbj {parser: 'uint1', autovalue: 0} //空气滤阻力报警 0关1开  
+     segment fsyyylbj {parser: 'uint1', autovalue: 0} //风扇液压油滤报警 0关1开
+     segment bsxgdd {parser: 'uint1', autovalue: 0} //变速箱高低档  0关1开
+     segment dsxdd {parser: 'uint1', autovalue: 0} //变速箱倒挡 0关1开
+     segment bsxkd {parser: 'uint1', autovalue: 0} //变速箱空档 0关1开
+     segment dqdxh {parser: 'uint1', autovalue: 0} //电启动信号 0关1开
+     segment qydbj {parser: 'uint1', autovalue: 0} //气压低报警 0关1开
+     segment dlcjsbj {parser: 'uint1', autovalue: 0} //动力舱进水报警
+     segment yqyjtzs {parser: 'uint1', autovalue: 0} //一桥右接通指示  
+     segment ljcsbszs {parser: 'uint1', autovalue: 0} //轮间差速闭锁指示
+     segment ccbgzzs {parser: 'uint1', autovalue: 0} //抽尘泵工作指示
+     segment unused {parser: 'uint4', autovalue: 0} //保留
+     segment unused1 {parser: 'uint32', autovalue: 0} //保留
+     segment kpqcf {parser: 'uint16<', autovalue: 0} //开排气窗阀   
+     segment gpqcf {parser: 'uint16<', autovalue: 0} //关排气窗阀
+     segment kjqcf {parser: 'uint16<', autovalue: 0} //开进气窗阀
+     segment gjqcf {parser: 'uint16<', autovalue: 0} //关进气窗阀
+     segment yqyjtdcf {parser: 'uint16<', autovalue: 0} //1桥右接通电磁阀
+     segment yqzx {parser: 'uint16<', autovalue: 0} //右前转向
+     segment yqskd {parser: 'uint16<', autovalue: 0} //右前示廓灯
+     segment sqyjtdcf {parser: 'uint16<', autovalue: 0} //四桥右接通电磁阀
+     segment zjycsdcf {parser: 'uint16<', autovalue: 0} //轴间右差速电磁阀
+     segment yqzjtdcf {parser: 'uint16<', autovalue: 0} //一桥左接通电磁阀
+     segment syzjtdcf {parser: 'uint16<', autovalue: 0} //四样左接通电磁阀
+     segment zjcsdcf {parser: 'uint16<', autovalue: 0} //轴间差速电磁阀
+     segment zjzcsdcf {parser: 'uint16<', autovalue: 0} //轴间左差速电磁阀
+     segment beyonh1 {parser: 'uint16<', autovalue: 0} //备用新加的
+     segment yczxd {parser: 'uint16<', autovalue: 0} //  右侧转向灯1
+     segment yqddyg {parser: 'uint16<', autovalue: 0} //右前大灯远光
+     segment yqddjg {parser: 'uint16<', autovalue: 0} //右前大灯近光
+     segment dlb {parser: 'uint16<', autovalue: 0} //电喇叭
+     segment gzq {parser: 'uint16<', autovalue: 0} //干燥器 
+     segment beyonh2 {parser: 'uint16<', autovalue: 0} //备用新加的  
+     segment dlcpsb1 {parser: 'uint16<', autovalue: 0} //动力舱排水泵1
+     segment unused2 {parser: 'uint64<', autovalue: 0} //保留
+     segment unused4 {parser: 'uint64<', autovalue: 0} //保留
+     segment unused4 {parser: 'uint16<', autovalue: 0} //保留
+     segment kqlzldy {parser: 'uint16<', autovalue: 0} //空气滤阻力电源 0.01V
+     segment jscgqdy {parser: 'uint16<', autovalue: 0} //  进水传感器电源 0.01V
+     segment bsxyydy {parser: 'uint16<', autovalue: 0} //变速箱油压电源 0.01V
+     segment ssyyyydy {parser: 'uint16<', autovalue: 0} //水上液压油压电源 0.01V
+     segment cscgqdy {parser: 'uint16<', autovalue: 0} //车速传感器电源 0.01V
+  }

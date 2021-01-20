@@ -4,7 +4,7 @@ bitrl protocol recv_caiji {
     segment adc_60 {parser: 'uint16>', autovalue: 0}
     segment dzjc_ad1 {parser: 'uint16>', autovalue: 0}
     segment i_ad {parser: 'uint16>', autovalue: 0}
-    segment ad_temp {parser: 'uint16>', autovalue: 0}
+    segment ad_temp {parser: 'int16>', autovalue: 0}
     segment state {parser: 'uint8', autovalue: 0}
     segment vot_sgi1 {parser: 'uint16>', autovalue: 0}
     segment vot_sgi0 {parser: 'uint16>', autovalue: 0}

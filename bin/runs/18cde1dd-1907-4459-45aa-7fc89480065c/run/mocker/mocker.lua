@@ -160,7 +160,9 @@ function Test_res(test_code)
 
         if t.t_data then    -- 普通真值
             local r_data = CreateTrueData(t.t_data)
+            print(r_data)
             local res = message(protocol[t.t_prot], r_data)
+            print(res)
             local msg = CreatSendMain(t.t_cmd, t.t_card, pack(res))
             -- 延时一段时间回复测试结果
             delay(500)
@@ -365,7 +367,7 @@ function Do_test(msg, sub_prot)
     end
 
     print(CARDS_NAME[msg.DA] .. "收到：测试开始指令(" .. msg.LEN .. ")")
-    delay(4000)
+    -- delay(4000)
     Test_res(sub_msg.test_code)
 end
 
@@ -474,7 +476,7 @@ function Do_test_iur(msg, prot)
         if sub_msg.dianzu_check == 0x01 or sub_msg.dianzu_check == 0x02 then
             return Do_result_r(sub_msg, msg.DA)
         else
-            Timer_id = async.interval(400, 400, Do_result_iu, sub_msg, msg.DA)            
+            Timer_id = async.interval(400, 300, Do_result_iu, sub_msg, msg.DA)            
         end
     elseif sub_msg.test_state == 0x02 then
         print(CARDS_NAME[msg.DA] .. "收到：测试结束指令(" .. msg.LEN .. ")")

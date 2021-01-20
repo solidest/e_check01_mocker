@@ -1,0 +1,163 @@
+// 选择底盘型号时，告诉被测设备做好综电测试准备
+bitrl protocol start_electric {
+    segment device_type {parser: 'uint8', autovalue: 0}  //设备
+    segment function_type {parser: 'uint8', autovalue: 0} //功能
+    segment test_code {parser: 'uint8', autovalue: 0} //测试项
+    segment test_code_child {parser: 'uint8', autovalue: 0} //测试子项
+    segment other {parser: 'uint8', autovalue: 0} //其他
+}
+
+bitrl protocol start_electric_ip{
+    segment device_type {parser: 'uint8', autovalue: 0}  //设备
+    segment function_type {parser: 'uint8', autovalue: 0} //功能
+    segment test_code {parser: 'uint8', autovalue: 0} //测试项
+    segment test_code_child {parser: 'uint8', autovalue: 0} //测试子项
+    segment other {parser: 'uint8', autovalue: 0} //其他
+    segment ip1 {parser: 'uint8', autovalue: 0} //其他
+    segment ip2 {parser: 'uint8', autovalue: 0} //其他
+    segment ip3 {parser: 'uint8', autovalue: 0} //其他
+    segment ip4 {parser: 'uint8', autovalue: 0} //其他
+
+}
+bitrl protocol recv_usart {
+    segment device_type {parser: 'uint8', autovalue: 0}  //设备
+    segment function_type {parser: 'uint8', autovalue: 0} //功能 3
+    segment test_code {parser: 'uint8', autovalue: 0} //测试项1
+    segment test_code_child {parser: 'uint8', autovalue: 0} //测试子项1
+    segment other {parser: 'uint8', autovalue: 0} //其他1
+    segment data {parser: 'uint16>', autovalue: 0} //采样值256
+}
+
+bitrl protocol send_time_electric {
+    segment device_type {parser: 'uint8', autovalue: 0}  //设备
+    segment function_type {parser: 'uint8', autovalue: 0} //功能
+    segment test_code {parser: 'uint8', autovalue: 0} //测试项
+    segment test_code_child {parser: 'uint8', autovalue: 0} //测试子项
+    segment other {parser: 'uint8', autovalue: 0} //其他
+    segment year {parser: 'uint16<', autovalue: 0} // 年份
+    segment month {parser:'uint8', autovalue: 0} //月份
+    segment day {parser: 'uint8', autovalue: 0} //日
+    segment hours {parser:'uint8', autovalue: 0} //时
+    segment min {parser: 'uint8', autovalue: 0} //分
+    segment sec {parser: 'uint8', autovalue: 0} //秒
+
+
+
+}
+// 串口回复的协议 
+// 综电通用接收协议
+bitrl protocol recv_total {
+    segment device_type {parser: 'uint8', autovalue: 0}  //设备
+    segment function_type {parser: 'uint8', autovalue: 0} //功能
+    
+    oneof (this.function_type == 251) { //初始化回复
+        segment test_code {parser: 'uint8', autovalue: 0} //测试项
+    }
+    oneof (this.function_type == 250) { //心跳回复
+        segment test_code {} //测试项
+    }
+    oneof (this.function_type == 252) { //测试结束标志
+        segment test_code {parser: 'uint8', autovalue: 0} //测试项
+    }
+    oneof (this.function_type == 1) { //总线通信
+        segment test_code {parser: 'uint8', autovalue: 0} //测试项
+        oneof (this.test_code == 3) { //串口
+            segment test_code_child {parser: 'uint8', autovalue: 0} //测试子项
+            segment other {parser: 'uint8', autovalue: 0} //其他
+            segment usart {parser: 'uint16<', autovalue: 0} //串口多出的来的两个字节数据
+        }
+        oneof (this.test_code == 2) { //CAN
+            segment test_code_child {parser: 'uint8', autovalue: 0} //测试子项
+            segment other {parser: 'uint8', autovalue: 0} //其他
+        }
+        oneof (this.test_code == 4) { //以太网通信
+            segment test_code_child {parser: 'uint8', autovalue: 0} //测试子项
+            segment other {parser: 'uint8', autovalue: 0} //其他
+            segment usart {parser: 'uint16<', autovalue: 0} //串口多出的来的两个字节数据
+        }
+        oneof(this.test_code ~= 3) {
+            segment test_code_child {parser: 'uint8', autovalue: 0} //测试子项
+            segment other {parser: 'uint8', autovalue: 0} //其他            
+        }
+    }
+    oneof (this.function_type == 2) { //信号采集
+        segment test_code {parser: 'uint8', autovalue: 0} //测试项1
+        oneof(this.test_code == 101){
+            segment test_code_child {parser: 'uint8', autovalue: 0} //测试子项1
+            segment other {parser: 'uint8', autovalue: 0} //其他1
+            segment total_distance {parser: 'uint32<', autovalue: 0} //总里程
+            segment current_distan {parser: 'uint32<', autovalue: 0} //当前里程
+            segment total_hours {parser: 'uint32<', autovalue: 0} //总摩托小时
+            segment current_hours {parser: 'uint32<', autovalue: 0} //当前摩托小时
+        }
+        oneof(this.test_code == 102){ //清零
+            segment test_code_child {parser: 'uint8', autovalue: 0} //测试子项1
+            segment other {parser: 'uint8', autovalue: 0} //其他1
+            segment total_distance {parser: 'uint32<', autovalue: 0} //总里程
+            segment current_distan {parser: 'uint32<', autovalue: 0} //当前里程
+            segment total_hours {parser: 'uint32<', autovalue: 0} //总摩托小时
+            segment current_hours {parser: 'uint32<', autovalue: 0} //当前摩托小时
+        }
+        oneof(this.test_code == 103){ //记录
+            segment test_code_child {parser: 'uint8', autovalue: 0} //测试子项1
+            segment other {parser: 'uint8', autovalue: 0} //其他1
+            segment total_distance {parser: 'uint32<', autovalue: 0} //总里程
+            segment current_distan {parser: 'uint32<', autovalue: 0} //当前里程
+            segment total_hours {parser: 'uint32<', autovalue: 0} //总摩托小时
+            segment current_hours {parser: 'uint32<', autovalue: 0} //当前摩托小时
+        }
+        oneof(this.test_code == 200){
+            segment test_code_child {parser: 'uint8', autovalue: 0} //测试子项1
+            segment other {parser: 'uint8', autovalue: 0} //其他1
+            segment data {parser: 'uint32<', autovalue: 0} //采样值256
+
+        }
+        oneof(this.test_code ~= 103){
+            segment test_code_child {parser: 'uint8', autovalue: 0} //测试子项1
+            segment other {parser: 'uint8', autovalue: 0} //其他1
+            segment data {parser: 'uint16<', autovalue: 0} //采样值256
+        }
+    }
+    oneof (this.function_type == 3) { //电子开关
+        segment test_code {parser: 'uint8', autovalue: 0} //测试项1
+        segment test_code_child {parser: 'uint8', autovalue: 0} //测试子项1
+        segment other {parser: 'uint8', autovalue: 0} //其他1
+        segment data {parser: 'int16<', autovalue: 0} //采样值256
+    }
+    oneof (this.function_type == 5) { //
+        segment test_code {parser: 'uint8', autovalue: 0} //测试项1
+        segment test_code_child {parser: 'uint8', autovalue: 0} //测试子项1
+        segment other {parser: 'uint8', autovalue: 0} //其他1
+    }
+}
+// 心跳回复,初始化的回复
+bitrl protocol recv_electric {
+    segment device_type {parser: 'uint8', autovalue: 0}  //设备
+    segment function_type {parser: 'uint8', autovalue: 0} //功能
+    segment test_code {parser: 'uint8', autovalue: 0} //测试项
+}
+
+// 通用接收综电测试回复指令
+bitrl protocol stop_electric {
+    segment device_type {parser: 'uint8', autovalue: 0}  //设备
+    segment function_type {parser: 'uint8', autovalue: 0} //功能
+}
+
+// 接收综电测试回复指令数据采集 4个
+bitrl protocol recv_electric_caiji {
+    segment device_type {parser: 'uint8', autovalue: 0}  //设备
+    segment function_type {parser: 'uint8', autovalue: 0} //功能
+    segment data {parser: 'uint16>', autovalue: 0} //采样值
+}
+
+// 接收综电测试回复指令车辆行程信息 1个
+bitrl protocol recv_electric_vehicle {
+    segment device_type {parser: 'uint8', autovalue: 0}  //设备
+    segment function_type {parser: 'uint8', autovalue: 0} //功能
+    segment total_distance {parser: 'uint16>', autovalue: 0} //总里程
+    segment current_distan {parser: 'uint16>', autovalue: 0} //当前里程
+    segment total_hours {parser: 'uint16>', autovalue: 0} //总摩托小时
+    segment current_hours {parser: 'uint16>', autovalue: 0} //当前摩托小时
+
+}
+

@@ -2,30 +2,30 @@
 
 //仿真设备1
 device board1 {
-    udp conn { ip: '127.0.0.1', port: 4000}
+    udp conn { ip: '192.168.42.128', port: 4000}
     // udp conn { ip: '192.168.10.108', port: 8001}
 }
 
 
 //仿真设备2
-device board2 {
+// device board2 {
 
-    // udp conn { ip: '127.0.0.1', port: 4001}
-}
+//     // udp conn { ip: '127.0.0.1', port: 4001}
+// }
 
-//仿真设备3
-device board3 {
+// //仿真设备3
+// device board3 {
 
-    udp conn { ip: '127.0.0.1', port: 4001}
-    // udp conn { ip: '127.0.0.1', port: 8001}
-}
+//     udp conn { ip: '127.0.0.1', port: 4001}
+//     // udp conn { ip: '127.0.0.1', port: 8001}
+// }
 
 
 
 //主控设备
 device main_ctr {
     // udp conn {ip: '127.0.0.1', port:8000, before_recv: 'Before_recv'}
-    udp conn {ip: '127.0.0.1', port:4000, before_recv: 'Before_recv'}
+    udp conn {ip: '192.168.42.128', port:4002, before_recv: 'Before_recv'}
 
 }
 

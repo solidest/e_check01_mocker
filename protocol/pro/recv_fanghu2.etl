@@ -34,8 +34,8 @@ bitrl protocol recv_fanghu2 {
     segment x2_91 {parser: 'uint1', autovalue: 0}
     segment x2_93 {parser: 'uint1', autovalue: 0}
     segment x2_95 {parser: 'uint1', autovalue: 0}
-    segment x2_8 {parser: 'uint1', autovalue: 0}
     segment x2_10 {parser: 'uint1', autovalue: 0}
+    segment x2_8 {parser: 'uint1', autovalue: 0}
     segment x2_10__ {parser: 'uint6', autovalue: 0}
     segment x3_4 {parser: 'uint4', autovalue: 0}
     segment x3_6 {parser: 'uint4', autovalue: 0}
