@@ -1,5 +1,5 @@
 MOCKER_ERROR = false    -- 模拟错误
-
+local this = {}
 
 
 function entry(vars, option)
@@ -26,7 +26,8 @@ CARDS_NAME = {
     [0x03] = "防护系统测试板卡1",
     [0x04] = "防护系统测试板卡2",
     [0x05] = "通讯板卡1",
-    [0x06] = "通讯板卡2"
+    [0x06] = "通讯板卡2",
+    [0x07] = "综电板卡"
 }
 
 -- 创建主协议数据
@@ -36,6 +37,17 @@ function CreatSendMain(cmd, sa, buffer)
     main.SA = sa
     main.CMD = cmd
     main.DA = 0x01
+    return pack(main)
+end
+
+function CreatSendMain_Electric(cmd, sa, buffer, device_type, function_type)
+    local main = message(protocol.RECV_MAIN_ELECTRIC)
+    main.BUFFER = buffer
+    main.SA = sa
+    main.CMD = cmd
+    main.DA = 0x01
+    main.DEVICE_TYPE = device_type
+    main.FUNCTION_TYPE = function_type
     return pack(main)
 end
 
@@ -267,21 +279,260 @@ function Recv_data(msg, opt)
         end
     elseif msg.CMD == 0x50 then-- 通讯
         if msg.DA == 0x05 then
-            Do_test_fanghutx1(msg)
+            if string.sub(string.buff2hex(msg.BUFFER),1,2) == '01' then
+                Do_test_fanghutx1(msg, protocol.prot_can)
+            elseif string.sub(string.buff2hex(msg.BUFFER),1,2) == '05' then
+                Do_test_fanghutx1_usart(msg, protocol.prot_usart)
+            else
+                log.error(CARDS_NAME[msg.DA] .. "收到无法识别的通信指令")
+            end
         elseif msg.DA == 0x06 then
-            Do_test_fanghutx2(msg)
+            Do_test_fanghutx2(msg, protocol.prot_can)
         else
             log.error(CARDS_NAME[msg.DA] .. "收到无法识别的通信指令")
         end
+    elseif msg.CMD == 104 then -- 综电底盘型号7
+        Do_test_electric_104(msg)
+    elseif msg.CMD == 102 then --综电地盘12
+        Do_test_electric_102(msg)
+    elseif msg.CMD == 153 then --综电系统维护
+        local sub_msg = unpack(protocol.start_electric, msg.BUFFER)
+        if sub_msg == nil then
+            local msg_xitong = unpack(protocol.io_ad_electric_send, msg.BUFFER)
+            if msg_xitong.device_type == 11 then --MIC
+                local res = message(protocol.io_ad_electric_recv)
+                res.device_type = msg_xitong.device_type 
+                res.mic_data = 1243
+                res.function_type = msg_xitong.function_type
+                local msg2 = CreatSendMain(msg.CMD, msg.DA, pack(res))
+                async.send(device.board1.conn, msg2)
+            elseif msg_xitong.device_type == 12 then ---1553B
+                local res = message(protocol.io_ad_electric_recv)
+                res.device_type = msg_xitong.device_type 
+                res.b1553_data = 1243
+                res.function_type = msg_xitong.function_type
+                local msg2 = CreatSendMain(msg.CMD, msg.DA, pack(res))
+                async.send(device.board1.conn, msg2)
+            elseif msg_xitong.device_type == 10 then ---can
+                local res = message(protocol.io_ad_electric_recv)
+                res.device_type = msg_xitong.device_type 
+                res.can_data = 1243567
+                res.can_id = 2588
+                res.can_len = 25
+                res.function_type = msg_xitong.function_type
+                local msg2 = CreatSendMain(msg.CMD, msg.DA, pack(res))
+                async.send(device.board1.conn, msg2)
+            elseif msg_xitong.device_type == 13 then ---flaxray
+                local res = message(protocol.io_ad_electric_recv)
+                res.device_type = msg_xitong.device_type 
+                res.flexray_len = 12
+                res.flexray_data = 251
+                res.function_type = msg_xitong.function_type
+                local msg2 = CreatSendMain(msg.CMD, msg.DA, pack(res))
+                async.send(device.board1.conn, msg2)
+            elseif msg_xitong.device_type == 5 or msg_xitong.device_type == 7 then
+                local res = message(protocol.io_ad_electric_recv)
+                res.device_type = msg_xitong.device_type 
+                res.data = 2012
+                res.function_type = msg_xitong.function_type
+                local msg2 = CreatSendMain(msg.CMD, msg.DA, pack(res))
+                async.send(device.board1.conn, msg2)
+            
+            end
+          
+        else
+            Do_init_electric(msg)
+        end
+        print("msg = ",msg)
     else
-        log.error(CARDS_NAME[msg.DA] .. "收到无法识别的指令，CMD =", msg.CMD)
+        log.error(CARDS_NAME[msg.DA] .. "收到无法识别的指令，CMD =", msg)
     end
+end
+
+function Do_test_electric_104(msg)
+    local msg_init = unpack(protocol.start_electric, msg.BUFFER)
+    if msg_init.function_type == 251 or msg_init.function_type == 252 then --初始化回复
+        Do_init_electric(msg)
+    elseif msg_init.function_type == 1 then
+        if msg_init.device_type == 2 and msg_init.function_type ==1 and msg_init.test_code == 3 then
+            local res = message(protocol.recv_total)
+            res.function_type = msg_init.function_type
+            res.test_code = msg_init.test_code
+            res.usart = 1
+            local msg2 = CreatSendMain(msg.CMD, msg.DA, pack(res))
+            async.send(device.board1.conn, msg2)
+
+        elseif msg_init.device_type == 1 and msg_init.function_type ==1 and msg_init.test_code == 4 then
+            local res = message(protocol.recv_total)
+            res.function_type = msg_init.function_type
+            res.test_code = msg_init.test_code
+            res.other = 1
+            local msg2 = CreatSendMain(msg.CMD, msg.DA, pack(res))
+            async.send(device.board1.conn, msg2)  
+        elseif msg_init.test_code == 1 or msg_init.test_code == 2 then
+            local res = message(protocol.recv_total)
+            res.function_type = msg_init.function_type
+            res.test_code = msg_init.test_code
+            res.other = 1
+            local msg2 = CreatSendMain(msg.CMD, msg.DA, pack(res))
+            async.send(device.board1.conn, msg2)
+        
+        else    
+            Do_total_data07(msg) --通信协议解析与总线节点测试
+        end
+
+    elseif msg_init.function_type == 0 then
+        Do_total_data07(msg)
+    
+    else
+        Do_test_electric(msg) --上报测试结果
+    end
+end
+function Do_test_electric_102(msg)
+    local msg_init = unpack(protocol.start_electric, msg.BUFFER)
+    if msg_init.function_type == 251 or msg_init.function_type == 252 then --初始化回复
+        Do_init_electric(msg)
+    elseif msg_init.function_type == 0 then
+        Do_total_data12(msg)
+    elseif msg_init.function_type == 1 then
+        if msg_init.device_type == 2 and msg_init.function_type ==1 and msg_init.test_code == 3 then
+            local res = message(protocol.recv_total)
+            res.function_type = msg_init.function_type
+            res.test_code = msg_init.test_code
+            res.usart = 1
+            local msg2 = CreatSendMain(msg.CMD, msg.DA, pack(res))
+            async.send(device.board1.conn, msg2)
+        elseif msg_init.device_type == 1 and msg_init.function_type ==1 and msg_init.test_code == 4 then
+            local res = message(protocol.recv_total)
+            res.function_type = msg_init.function_type
+            res.test_code = msg_init.test_code
+            res.other = 1
+            local msg2 = CreatSendMain(msg.CMD, msg.DA, pack(res))
+            async.send(device.board1.conn, msg2)
+        elseif msg_init.test_code == 1 or msg_init.test_code == 2 then
+            local res = message(protocol.recv_total)
+            res.function_type = msg_init.function_type
+            res.test_code = msg_init.test_code
+            res.other = 1
+            local msg2 = CreatSendMain(msg.CMD, msg.DA, pack(res))
+            async.send(device.board1.conn, msg2)
+        else 
+            Do_total_data12(msg) --通信协议解析与总线节点测试
+        end
+    elseif msg_init.function_type == 6 then
+        Do_init_electric(msg)
+    else
+        Do_test_electric(msg) --上报测试结果
+    end
+end
+
+function Do_total_data12(msg_info)
+    local msg = unpack(protocol.start_electric, msg_info.BUFFER)
+    local prot = nil
+    if msg.device_type == 9 then
+        prot = protocol.fdjdkh_electric
+    elseif msg.device_type == 3 then
+        prot = protocol.dlc
+    elseif msg.device_type == 5 then
+        prot = protocol.zycdkh_electric
+    elseif msg.device_type == 4 then
+        prot = protocol.cyc
+    elseif msg.device_type == 2 then
+        print(11111111111)
+        prot = protocol.jsy_88_electric
+    elseif msg.device_type == 1 then
+        prot = protocol.cz_88_electric
+    elseif msg.device_type == 0 then
+        prot = protocol.xtz2_electric
+    else
+        print("有问题, msg = ", msg)
+    end
+    print(prot)
+    local res = message(prot)
+    if msg.device_type ~=  0 then
+        res.test_code = msg.test_code
+        res.comm_state = 1
+    else
+        res.da1 = 1
+        res.da2 = 1
+        res.da3 = 1
+        res.da4 = 1
+        res.da5 = 1
+        res.da6 = 1
+    end
+
+    
+    local msg2 = CreatSendMain_Electric(msg.CMD, msg.DA, pack(res), msg.device_type, msg.function_type)
+    async.send(device.board1.conn, msg2)
+
+end
+
+function Do_total_data07(msg_info)
+    local msg = unpack(protocol.start_electric, msg_info.BUFFER)
+    local prot = nil
+    if msg.device_type == 10 then
+        prot = protocol.czczmb_electric
+    elseif msg.device_type == 12 then
+        prot = protocol.pkt_04a_electric
+    elseif msg.device_type == 9 then
+        prot = protocol.fdjdkh_electric
+    elseif msg.device_type == 8 then
+        prot = protocol.ybbxx1_electric
+    elseif msg.device_type == 7 then
+        prot = protocol.cddkh_electric
+    elseif msg.device_type == 3 then
+        prot = protocol.dlcdkhe_electric
+    elseif msg.device_type == 5 then
+        prot = protocol.zycdkh_electric
+    elseif msg.device_type == 4 then
+        prot = protocol.jscdkh_electric
+    elseif msg.device_type == 2 then
+        prot = protocol.jsy_04a_electric
+    elseif msg.device_type == 1 then
+        prot = protocol.cz_04a_electric
+    elseif msg.device_type == 0 then
+        prot = protocol.xtz1_electric
+    else
+        print("有问题, msg = ", msg)
+    end
+    print(prot)
+    local res = message(prot)
+    if msg.device_type ~=  0 then
+        res.test_code = msg.test_code
+        res.comm_state = 1
+    else
+        res.da1 = 1
+        res.da2 = 1
+        res.da3 = 1
+        res.da4 = 1
+        res.da5 = 1
+        res.da6 = 1
+    end
+
+    
+    local msg2 = CreatSendMain_Electric(msg.CMD, msg.DA, pack(res), msg.device_type, msg.function_type)
+    async.send(device.board1.conn, msg2)
+end
+
+
+
+
+function Do_test_electric(msg)
+    delay(2000)
+    local msg_init = unpack(protocol.start_electric, msg.BUFFER)
+    local sub_msg = message(protocol.recv_total)
+    sub_msg.device_type = msg_init.device_type
+    sub_msg.function_type = msg_init.function_type
+    sub_msg.test_code = msg_init.test_code
+    sub_msg.other = 1
+    local msg2 = CreatSendMain(msg.CMD, msg.DA, pack(sub_msg))
+    async.send(device.board1.conn, msg2)
+
 end
 
 -- 处理握手指令
 function Do_hand(msg)
     print(CARDS_NAME[msg.DA] .. "收到：握手指令(" .. msg.LEN .. ")")
-
     if Timer_id then
         async.clear(Timer_id)
     end
@@ -309,6 +560,7 @@ function Do_hand(msg)
     async.send(device.board1.conn, CreatSendMain(0x01, 0x04, buf_sub))
     async.send(device.board1.conn, CreatSendMain(0x01, 0x05, buf_sub))
     async.send(device.board1.conn, CreatSendMain(0x01, 0x06, buf_sub))
+    async.send(device.board1.conn, CreatSendMain(0x01, 0x07, buf_sub))
     print('全部握手回复已回复')
 end
 
@@ -367,7 +619,6 @@ function Do_test(msg, sub_prot)
     end
 
     print(CARDS_NAME[msg.DA] .. "收到：测试开始指令(" .. msg.LEN .. ")")
-    delay(4000)
     Test_res(sub_msg.test_code)
 end
 
@@ -387,13 +638,29 @@ function Do_test_yibiao(msg)
 end
 
 -- 测试防护通信1
-function Do_test_fanghutx1(msg)
-    print(CARDS_NAME[msg.DA] .. "收到：测试？指令(" .. msg.LEN .. ")")
+function Do_test_fanghutx1(msg, prot)
+    print(CARDS_NAME[msg.DA] .. "收到：测试指令(" .. msg.LEN .. ")")
+    local res2 = message(prot, {path=1,baud_rate=65471,data_type=1,data_id=2344234,data={45,58},data_len=2})
+    local msg2 = CreatSendMain(0x50, 0x05, pack(res2))
+    send(device.board1.conn, msg2)
+    print(CARDS_NAME[msg.DA] .. "回复：测试指令(" .. msg.LEN .. ")")
+
+end
+function Do_test_fanghutx1_usart(msg, prot)
+    print(CARDS_NAME[msg.DA] .. "收到：usart测试指令(" .. msg.LEN .. ")")
+    local res2 = message(prot, {path=1,baud_rate=65471,data={45,58,234,222,65,189,214},data_len=7})
+    local msg2 = CreatSendMain(0x50, 0x05, pack(res2))
+    send(device.board1.conn, msg2)
+    print(CARDS_NAME[msg.DA] .. "回复：usart测试指令(" .. msg.LEN .. ")")
 end
 
 -- 测试防护通信2
-function Do_test_fanghutx2(msg)
-    print(CARDS_NAME[msg.DA] .. "收到：测试？指令(" .. msg.LEN .. ")")
+function Do_test_fanghutx2(msg, prot)
+    print(CARDS_NAME[msg.DA] .. "收到：测试指令(" .. msg.LEN .. ")")
+    local res2 = message(prot, {path=1,baud_rate=65471,data_type=2,data_id=239977834,data={45,58,211,99,89},data_len=5})
+    local msg2 = CreatSendMain(0x50, 0x06, pack(res2))
+    send(device.board1.conn, msg2)
+    print(CARDS_NAME[msg.DA] .. "回复：测试指令(" .. msg.LEN .. ")")
 end
 
 function Do_result_r(sub_msg,da)
@@ -475,8 +742,10 @@ function Do_test_iur(msg, prot)
     if sub_msg.test_state == 0x01 then
         if sub_msg.dianzu_check == 0x01 or sub_msg.dianzu_check == 0x02 then
             return Do_result_r(sub_msg, msg.DA)
+        elseif sub_msg.test_state == 0x01 and sub_msg.test_code == 0  then
+            return Do_test(msg, protocol.send_nobus)
         else
-            Timer_id = async.interval(400, 300, Do_result_iu, sub_msg, msg.DA)            
+            Timer_id = async.interval(400, 250, Do_result_iu, sub_msg, msg.DA)            
         end
     elseif sub_msg.test_state == 0x02 then
         print(CARDS_NAME[msg.DA] .. "收到：测试结束指令(" .. msg.LEN .. ")")
@@ -486,4 +755,36 @@ function Do_test_iur(msg, prot)
     else
         log.error(CARDS_NAME[msg.DA] .. "收到错误的测试状态")
     end
+end
+
+function Do_init_electric(msg)
+    if  Step ~= nil and Step ~= "hand_ok" and Step ~= "init" and Step ~= "test_ok" then
+        log.error(CARDS_NAME[msg.DA] .. "收到：错误的初始化指令, Step(" .. (Step or "nil") .. ")")
+        return
+    end
+    Step = "init"
+    print(CARDS_NAME[msg.DA] .. "收到：初始化指令(" .. msg.LEN .. ")")
+
+    -- 保存全局状态数据
+    local msg_init
+    if msg.DA == 0x07 then
+        msg_init = unpack(protocol.start_electric, msg.BUFFER)
+    else
+        log.error(CARDS_NAME[msg.DA] .. "收到：无法识别的控制指令")
+    end
+    Device_type = msg_init.device_type
+    Device_code = msg_init.device_code
+
+    -- 初始化回复
+    local res = 1
+    local rd = math.random(1, 20)
+    if rd == 1 and MOCKER_ERROR then --模拟初始化超时
+        log.warn("已模拟初始化超时")
+        return
+    elseif rd == 2 and MOCKER_ERROR then --模拟初始化失败
+        res = 0
+        log.warn("初始化失败数据已发送")
+    end
+    local msg_sub = message(protocol.recv_total, {function_type = 251,test_code=1})
+    async.send(device.board1.conn, CreatSendMain(msg.CMD, msg.DA, pack(msg_sub)))
 end

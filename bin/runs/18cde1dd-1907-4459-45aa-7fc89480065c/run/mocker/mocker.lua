@@ -26,7 +26,8 @@ CARDS_NAME = {
     [0x03] = "防护系统测试板卡1",
     [0x04] = "防护系统测试板卡2",
     [0x05] = "通讯板卡1",
-    [0x06] = "通讯板卡2"
+    [0x06] = "通讯板卡2",
+    [0x07] = "综电板卡"
 }
 
 -- 创建主协议数据
@@ -243,6 +244,8 @@ end
 
 -- 通用的接收总函数
 function Recv_data(msg, opt)
+    print(msg)
+
     if not CARDS_NAME[msg.DA] then
         log.error("收到指令，但无法识别目标地址：" .. string.format("%02X", msg.DA))
         return
@@ -273,6 +276,12 @@ function Recv_data(msg, opt)
         else
             log.error(CARDS_NAME[msg.DA] .. "收到无法识别的通信指令")
         end
+    elseif msg.CMD == 104 then -- 综电底盘型号7
+        print(11111111)
+        print(msg)
+    elseif msg.CMD == 102 then -- 综电底盘型号12
+        print(11111111)
+        print(msg)
     else
         log.error(CARDS_NAME[msg.DA] .. "收到无法识别的指令，CMD =", msg.CMD)
     end
@@ -367,7 +376,7 @@ function Do_test(msg, sub_prot)
     end
 
     print(CARDS_NAME[msg.DA] .. "收到：测试开始指令(" .. msg.LEN .. ")")
-    -- delay(4000)
+    delay(4000)
     Test_res(sub_msg.test_code)
 end
 

@@ -378,3 +378,13 @@ SIGABRT: aborted
 #6  0x2409b in __libc_start_main at /home/believe/e_check01_mocker/bin/etestd
 #7  0x4097fa in _start at /home/believe/e_check01_mocker/bin/etestd
 
+0126 16:42:05] SIGABRT: aborted
+#0  0x377bb in gsignal at /home/believe/e_check01_mocker/bin/etestd
+#1  0x22535 in abort at /home/believe/e_check01_mocker/bin/etestd
+#2  0x2240f in ?? at /home/believe/e_check01_mocker/bin/etestd
+#3  0x30102 in __assert_fail at /home/believe/e_check01_mocker/bin/etestd
+#4  0x40d7d0 in ServerImpl::start() at /home/solidest/Desktop/etest_daemon/src/msgrpc.cc:104
+#5  0x446c85 in main at /home/solidest/Desktop/etest_daemon/main.cpp:63
+#6  0x2409b in __libc_start_main at /home/believe/e_check01_mocker/bin/etestd
+#7  0x4097fa in _start at /home/believe/e_check01_mocker/bin/etestd
+
